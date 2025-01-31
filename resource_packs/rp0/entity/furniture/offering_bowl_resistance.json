@@ -1,0 +1,33 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "offering_bowl:resistance",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entities/offering_bowl"
+      },
+      "geometry": {
+        "default": "geometry.offering_bowl"
+      },
+      "render_controllers": [ "controller.render.onetexture" ],
+
+      "animation_controllers": [
+        {"particles":"controller.animation.particles.offering_bowl"}
+      ],
+
+      "animations": {
+        "on_fire": "animation.particle.loop"
+      },
+      "particle_effects": {
+        "particle_loop": "offering_bowl:resistance"
+      },
+      "spawn_egg": {
+        "base_color": "#e3feff",
+        "overlay_color": "#faffff"
+      }
+    }
+  }
+} 

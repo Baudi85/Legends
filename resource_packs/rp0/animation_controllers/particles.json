@@ -1,0 +1,35 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.particles.offering_bowl": {
+            "initial_state": "no_particles",
+
+            "states": {
+                "no_particles": {
+                    "transitions": [
+                        {"particles": "query.variant == 1"}
+                    ]
+                },
+                "particles": {
+                    "transitions": [
+                        {"no_particles":"query.variant == 0"}
+                    ],
+
+                    "animations": [
+                        "on_fire"
+                    ]
+                }
+            }
+        },
+        "controller.animation.particles.idle": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "animations": [
+                        "idle_particle"
+                    ]   
+                }
+            }
+        }
+    }
+}

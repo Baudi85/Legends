@@ -1,0 +1,392 @@
+{
+	"format_version": "1.17.10",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:player",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false,
+			"animations": {
+				"item_equipped_sword": "controller.animation.player.use_item.weapons.sword",
+				"item_equipped_medusa_spear": "controller.animation.player.use_item.weapons.medusa_spear",
+				"flying_attack": "controller.animation.attack_fly",
+				"use_item_Questbook": "controller.animation.player.use_item.Questbook",
+				"death_controller": "controller.animation.player.death",
+				"use_item_spawn_boat": "controller.animation.player.use_item.spawn_boat",
+				"use_item_spawn_carriage": "controller.animation.player.use_item.spawn_carriage",
+				"flying_controller": "controller.animation.player_fly",
+				"intro_damage_controller": "controller.animation.player.intro_damage",
+				"intro_damage_animation": "animation.player.intro_damage"
+			},
+			"scripts": {
+				"animate": [
+					"item_equipped_sword",
+					"item_equipped_medusa_spear",
+					"flying_attack",
+					"use_item_Questbook",
+					"death_controller",
+					"use_item_spawn_boat",
+					"use_item_spawn_carriage",
+					"flying_controller",
+					"intro_damage_controller"
+				]
+			}
+		},
+		"component_groups": {
+			"greek:intro": {
+				"minecraft:is_ignited": {},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"deals_damage": false
+					}
+				}
+			},
+			"greek:hydra_attack": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"spawn_entity": "greek:fireball",
+							"single_use": true,
+							"num_to_spawn": 1
+						}
+					]
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 1,
+					"time_down_event": {
+						"event": "greek:reset_hydra_attack",
+						"target": "self"
+					}
+				}
+			},
+			"greek:stunned_speed": {
+				"minecraft:movement": {
+					"value": 1e-11
+				},
+				"minecraft:is_stunned": {},
+				"minecraft:knockback_resistance": {
+					"value": 1
+				}
+			},
+			"greek:normal_speed": {
+				"minecraft:movement": {
+					"value": 0.1
+				}
+			},
+			"minecraft:add_bad_omen": {
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "bad_omen",
+							"duration": 6000,
+							"display_on_screen_animation": true
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": [
+						0.0,
+						0.0
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "minecraft:clear_add_bad_omen",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:clear_bad_omen_spell_effect": {
+				"minecraft:spell_effects": {}
+			},
+			"minecraft:raid_trigger": {
+				"minecraft:raid_trigger": {
+					"triggered_event": {
+						"event": "minecraft:remove_raid_trigger",
+						"target": "self"
+					}
+				},
+				"minecraft:spell_effects": {
+					"remove_effects": "bad_omen"
+				}
+			},
+			"cg:no_custom_weapon_equipped": {
+				"minecraft:attack": {
+					"damage": 1
+				}
+			},
+			"cg:sword_equipped": {
+				"minecraft:attack": {
+					"damage": 8
+				}
+			},
+			"cg:spear_equipped": {
+				"minecraft:attack": {
+					"damage": 12
+				}
+			}
+		},
+		"components": {
+			"minecraft:can_climb": {},
+			"minecraft:experience_reward": {
+				"on_death": "Math.Min(query.player_level * 7, 100)"
+			},
+			"minecraft:type_family": {
+				"family": [
+					"player"
+				]
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:loot": {
+				"table": "loot_tables/empty.json"
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.8
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:player.saturation": {
+				"value": 20
+			},
+			"minecraft:player.exhaustion": {
+				"value": 0,
+				"max": 4
+			},
+			"minecraft:player.level": {
+				"value": 0,
+				"max": 24791
+			},
+			"minecraft:player.experience": {
+				"value": 0,
+				"max": 1
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": -1,
+				"inhale_time": 3.75,
+				"generates_bubbles": false
+			},
+			"minecraft:nameable": {
+				"always_show": true,
+				"allow_name_tag_renaming": false
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:insomnia": {
+				"days_until_insomnia": 3
+			},
+			"minecraft:rideable": {
+				"seat_count": 2,
+				"family_types": [
+					"parrot_tame"
+				],
+				"pull_in_entities": true,
+				"seats": [
+					{
+						"position": [
+							0.4,
+							-0.2,
+							-0.1
+						],
+						"min_rider_count": 0,
+						"max_rider_count": 0,
+						"lock_rider_rotation": 0
+					},
+					{
+						"position": [
+							-0.4,
+							-0.2,
+							-0.1
+						],
+						"min_rider_count": 1,
+						"max_rider_count": 2,
+						"lock_rider_rotation": 0
+					}
+				]
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:block_climber": {},
+			"minecraft:environment_sensor": {
+				"triggers": {
+					"filters": {
+						"all_of": [
+							{
+								"test": "has_mob_effect",
+								"subject": "self",
+								"value": "bad_omen"
+							},
+							{
+								"test": "is_in_village",
+								"subject": "self",
+								"value": true
+							}
+						]
+					},
+					"event": "minecraft:trigger_raid"
+				}
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"cg:no_custom_weapon_equipped",
+						"greek:normal_speed"
+					]
+				}
+			},
+			"minecraft:gain_bad_omen": {
+				"add": {
+					"component_groups": [
+						"minecraft:add_bad_omen"
+					]
+				}
+			},
+			"minecraft:clear_add_bad_omen": {
+				"remove": {
+					"component_groups": [
+						"minecraft:add_bad_omen"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:clear_bad_omen_spell_effect"
+					]
+				}
+			},
+			"minecraft:trigger_raid": {
+				"add": {
+					"component_groups": [
+						"minecraft:raid_trigger"
+					]
+				}
+			},
+			"minecraft:remove_raid_trigger": {
+				"remove": {
+					"component_groups": [
+						"minecraft:raid_trigger"
+					]
+				}
+			},
+			"greek:reset_hydra_attck": {
+				"remove": {
+					"component_groups": [
+						"greek:hydra_attack"
+					]
+				}
+			},
+			"greek:launch_hydra_attack": {
+				"add": {
+					"component_groups": [
+						"greek:hydra_attack"
+					]
+				}
+			},
+			"evt:unequip_sword": {
+				"add": {
+					"component_groups": [
+						"cg:no_custom_weapon_equipped"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cg:sword_equipped"
+					]
+				}
+			},
+			"evt:equip_sword": {
+				"add": {
+					"component_groups": [
+						"cg:sword_equipped"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cg:no_custom_weapon_equipped"
+					]
+				}
+			},
+			"evt:unequip_spear": {
+				"add": {
+					"component_groups": [
+						"cg:no_custom_weapon_equipped"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cg:spear_equipped"
+					]
+				}
+			},
+			"evt:equip_spear": {
+				"add": {
+					"component_groups": [
+						"cg:spear_equipped"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cg:no_custom_weapon_equipped"
+					]
+				}
+			},
+			"evt:stun": {
+				"add": {
+					"component_groups": [
+						"greek:stunned_speed"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"greek:normal_speed"
+					]
+				}
+			},
+			"evt:stun_reset": {
+				"add": {
+					"component_groups": [
+						"greek:normal_speed"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"greek:stunned_speed"
+					]
+				}
+			},
+			"evt:enter_intro": {
+				"add": {
+					"component_groups": [
+						"greek:intro"
+					]
+				}
+			},
+			"evt:leave_intro": {
+				"remove": {
+					"component_groups": [
+						"greek:intro"
+					]
+				}
+			}
+		}
+	}
+}

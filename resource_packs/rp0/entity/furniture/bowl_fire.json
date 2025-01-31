@@ -1,0 +1,29 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "greek:bowl_fire",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "zero": "textures/entities/bowl_fire/0.png",
+        "one": "textures/entities/bowl_fire/1.png",
+        "two": "textures/entities/bowl_fire/2.png",
+        "three": "textures/entities/bowl_fire/3.png",
+        "four": "textures/entities/bowl_fire/4.png",
+        "five": "textures/entities/bowl_fire/5.png",
+        "six": "textures/entities/bowl_fire/6.png",
+        "seven": "textures/entities/bowl_fire/7.png"
+      },
+      "geometry": {
+        "default": "geometry.bowl_fire"
+      },
+      "render_controllers": [ "controller.render.eighttextures" ],
+      "spawn_egg": {
+        "base_color": "#e3feff",
+        "overlay_color": "#faffff"
+      }
+    }
+  }
+} 

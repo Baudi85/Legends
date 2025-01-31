@@ -1,0 +1,14 @@
+{
+	"format_version": "1.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "greek:quest",
+			"category": "Items"
+		},
+		"components": {
+			"minecraft:icon": "item_texture_Questbook",
+			"minecraft:render_offsets": "tools",
+			"minecraft:use_animation": "eat"
+		}
+	}
+}

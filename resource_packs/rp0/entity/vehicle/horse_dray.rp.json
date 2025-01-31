@@ -1,0 +1,26 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "greek:horse_dray",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entities/horse_dray"
+      },
+      "geometry": {
+        "default": "geometry.horse_dray"
+      },
+      "render_controllers": [ "controller.render.onetexture" ],
+      "animation_controllers": [{"general":"controller.animation.move"}],
+      "animations": {
+        "idle": "animation.horse_dray.idle",
+        "move": "animation.horse_dray.move"
+      },
+      "spawn_egg": {
+        "texture": "spawn_egg_dray"
+      }
+    }
+  }
+} 

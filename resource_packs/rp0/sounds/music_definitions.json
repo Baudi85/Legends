@@ -1,0 +1,37 @@
+{
+  "game": {
+    "event_name": "greek.music.idle",
+    "min_delay": 0,
+    "max_delay": 55
+  },
+  "creative": {
+    "event_name": "greek.music.idle",
+    "min_delay": 0,
+    "max_delay": 55
+  },
+  "end": {
+    "event_name": "greek.music.idle",
+    "min_delay": 60,
+    "max_delay": 180
+  },
+  "endboss": {
+    "event_name": "greek.music.hydra",
+    "min_delay": 60,
+    "max_delay": 180
+  },
+  "nether": {
+    "event_name": "greek.music.idle",
+    "min_delay": 60,
+    "max_delay": 180
+  },
+  "credits": {
+    "event_name": "greek.music.idle",
+    "min_delay": 0,
+    "max_delay": 0
+  },
+  "menu": {
+    "event_name": "greek.music.idle",
+    "min_delay": 0,
+    "max_delay": 30
+  }
+}

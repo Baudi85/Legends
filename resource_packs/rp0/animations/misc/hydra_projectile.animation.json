@@ -1,0 +1,17 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.hydra_projectile.spin": {
+			"loop": true,
+			"animation_length": 0.66667,
+			"bones": {
+				"root": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.6667": [360, -360, 0]
+					}
+				}
+			}
+		}
+	}
+}

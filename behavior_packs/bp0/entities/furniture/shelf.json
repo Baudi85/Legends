@@ -1,0 +1,59 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "greek:shelf",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "rotate": 	"controller.animation.rotate"
+      },
+      "scripts": {
+        "animate": ["rotate"]
+      }
+    },
+    "component_groups": {
+      "cg:interact":{
+        "minecraft:interact":{
+          "interactions":[
+            {
+              "on_interact": {
+                "filters": {"all_of": [	 {"test": "has_equipment","domain": "hand","subject": "other","value": "blaze_rod"}]},
+                "event": "evt:rotate"
+              },
+              "use_item": false,
+              "swing": true 
+            }
+          ]
+        }
+      },
+      "cg:rotating": {
+        "minecraft:is_baby": {},
+        "minecraft:timer": {"looping": false,"time": 0.3,"time_down_event": {"event": "evt:reset"}}
+      }
+    },
+    "components": {
+      "minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+				  "max_optimized_distance": 50.0,
+				  "max_dropped_ticks": 7,
+				  "use_motion_prediction_hints": true
+				}
+			},
+      "minecraft:damage_sensor": {"triggers": {"cause": "all", "deals_damage": false}},
+      "minecraft:knockback_resistance": {"value": 1000.0},
+      "minecraft:physics": {"has_gravity": true},        
+      "minecraft:type_family":{"family": ["greek", "furnature"]},         
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },  
+    "events": {
+      "minecraft:entity_spawned": {"add": { "component_groups": ["cg:interact"]}},
+      "evt:rotate": {"add":{"component_groups": ["cg:rotating"]}, "remove": {"component_groups": ["cg:interact"]}},
+      "evt:reset": {"add": {"component_groups": ["cg:interact"]}, "remove": {"component_groups": ["cg:rotating"]}}
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "misc:pot_loot",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entities/empty"
+      },
+      "geometry": {
+        "default": "geometry.empty"
+      },
+      "render_controllers": [ "controller.render.onetexture" ]
+    }
+  }
+} 

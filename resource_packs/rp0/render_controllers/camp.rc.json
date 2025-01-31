@@ -1,0 +1,24 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.soldier_camp": {
+            "arrays": {
+                "textures": {
+                    "Array.skins": [
+                        "Texture.default",
+                        "Texture.invis"
+                    ]
+                }
+            },
+            "textures": [
+                "Array.skins[query.mark_variant]"
+            ],
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ]
+        }
+    }
+}

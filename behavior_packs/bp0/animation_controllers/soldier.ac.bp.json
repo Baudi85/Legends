@@ -1,0 +1,46 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.soldier.init": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {"camp": "query.is_sheared"},
+                        {"arena": "query.is_saddled"},
+                        {"test": "query.is_baby"}
+                    ]
+                },
+
+                "camp": {
+                    "on_entry": ["/function soldier/init_camp"],
+                    "transitions": [
+                        {"camp_death": "!query.is_alive"}
+                    ]
+                },
+                "camp_death":{
+                    "on_entry": ["/function soldier/death_camp"]
+                },
+
+                "arena": {
+                    "transitions": [{"arena_death": "!query.is_alive"}]
+                },
+                "arena_death":{
+                    "on_entry": [
+                        "/function soldier/death_arena"
+                    ]
+                },
+                "test":{
+                    "transitions": [
+                        {"test_death": "!query.is_alive"}
+                    ]
+                },
+                "test_death":{
+                    "on_entry": [
+                        "/function soldier/death_test"
+                    ]
+                }
+            }
+        }
+    }
+}

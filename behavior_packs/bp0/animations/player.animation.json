@@ -1,0 +1,12 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.player.intro_damage": {
+            "loop": false,
+            "animation_length": 6,
+            "timeline": {
+                "6.0": [ "/event entity @a evt:leave_intro" ]
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.track_ring.rotate": {
+			"loop": true,
+			"animation_length": 16,
+			"bones": {
+				"ringb": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"16.0": [0, 0, 360]
+					}
+				},
+				"rings": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"16.0": [0, 0, -720]
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.npc.Soldier": {
+            "arrays": {
+                "textures": {
+                    "Array.skins": [
+						"Texture.v0",
+						"Texture.v1",
+						"Texture.v2",
+						"Texture.v3"
+                    ]
+                }
+            },
+            "textures": [
+                "Array.skins[query.variant]"
+            ],
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ]
+        }
+    }
+}

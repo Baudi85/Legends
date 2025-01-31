@@ -1,0 +1,175 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.threetextures": {
+            "arrays": {
+                "textures": {
+                    "Array.skins": [
+                        "Texture.One",
+                        "Texture.Two",
+                        "Texture.Three"
+                    ]
+                }
+            },
+            "textures": [
+                "Array.skins[query.variant]"
+            ],
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ]
+        },
+        "controller.render.onetexture": {
+            "textures": [
+                "Texture.default"
+            ],
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ]
+        },
+        "controller.render.twotextures": {
+            "arrays": {
+                "textures": {
+                    "Array.skins": [
+                        "Texture.One",
+                        "Texture.Two"
+                    ]
+                }
+            },
+            "textures": [
+                "Array.skins[query.variant]"
+            ],
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ]
+        },
+        "controller.render.fivetextures": {
+            "arrays": {
+                "textures": {
+                    "Array.skins": [
+                        "Texture.one",
+                        "Texture.two",
+                        "Texture.three",
+                        "Texture.four",
+                        "Texture.five"
+                    ]
+                }
+            },
+            "textures": [
+                "Array.skins[query.variant]"
+            ],
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ]
+        },
+        "controller.render.sixtextures": {
+            "arrays": {
+                "textures": {
+                    "Array.skins": [
+                        "Texture.One",
+                        "Texture.Two",
+                        "Texture.Three",
+                        "Texture.Four",
+                        "Texture.Five",
+                        "Texture.Six"
+                    ]
+                }
+            },
+            "textures": [
+                "Array.skins[query.variant]"
+            ],
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ]
+        },
+        "controller.render.fourtextures": {
+            "arrays": {
+                "textures": {
+                    "Array.skins": [
+                        "Texture.One",
+                        "Texture.Two",
+                        "Texture.Three",
+                        "Texture.Four"
+                    ]
+                }
+            },
+            "textures": [
+                "Array.skins[query.variant]"
+            ],
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ]
+        },
+        "controller.render.twelfetextures": {
+            "arrays": {
+                "textures": {
+                    "Array.skins": [
+                        "Texture.zero",
+                        "Texture.one",
+                        "Texture.two",
+                        "Texture.three",
+                        "Texture.four",
+                        "Texture.five",
+                        "Texture.six",
+                        "Texture.seven",
+                        "Texture.eight",
+                        "Texture.nine",
+                        "Texture.ten",
+                        "Texture.eleven"
+                    ]
+                }
+            },
+            "textures": [
+                "Array.skins[query.variant]"
+            ],
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ]
+        },
+        "controller.render.eighttextures": {
+            "arrays": {
+                "textures": {
+                    "Array.skins": [
+                        "Texture.zero",
+                        "Texture.one",
+                        "Texture.two",
+                        "Texture.three",
+                        "Texture.four",
+                        "Texture.five",
+                        "Texture.six",
+                        "Texture.seven"
+                    ]
+                }
+            },
+            "textures": [
+                "Array.skins[query.variant]"
+            ],
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ]
+        }
+    }
+}

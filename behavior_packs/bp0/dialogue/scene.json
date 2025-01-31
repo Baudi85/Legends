@@ -1,0 +1,716 @@
+{
+    "format_version":"1.17.0",
+    "minecraft:npc_dialogue":{
+        "scenes":[
+            {
+                "scene_tag":"quest1_0_0",
+                "npc_name":"Elder",
+                "text":"Hey! Everything alright? I've just found you unconscious here. Are you okay? Really? Fortunately!",
+                "buttons":[
+                    {
+                        "name":"..."
+                    }
+                ],
+                "on_close_commands": ["/dialogue open @e[type=npc:seher] @a[tag=initiator] quest1_0_1"]
+            },
+            {
+                "scene_tag":"quest1_0_1",
+                "npc_name":"Elder",
+                "text":"Wait a second. The thunder was a sign of the gods meaning that a demigod had fallen ... Could it be ... that you are this demigod? You can't remember?",
+                "buttons":[
+                    {
+                        "name":"?"
+                    }
+                ],
+                "on_close_commands": ["/dialogue open @e[type=npc:seher] @a[tag=initiator] quest1_0_2"]
+            },
+            {
+                "scene_tag":"quest1_0_2",
+                "npc_name":"Elder",
+                "text":"Anyway, welcome to our island! In case you are a fallen demigod indeed, I think I can bring your old power back to you. Therefore, meet me at my camp on the cliff.",
+                "buttons":[
+                    {
+                        "name":"For sure!"
+                    }
+                ],
+                "on_close_commands": [
+                    "/tag @a[tag=initiator] remove initiator",
+                    "/function quests/quest_1/intro"
+                ]
+            },
+            {
+                "scene_tag":"quest1_2_0",
+                "npc_name":"Elder",
+                "text":"There you are! So I will show you something interesting. Look at this sacrificial bowl. When you put a coin inside, you can obtain the gods' help for a short time. Just try it.",
+                "buttons":[
+                    {
+                        "name":"Alright!",
+                        "commands":[
+                            "/function quests/quest_1/task2"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest1_2_1",
+                "npc_name":"Elder",
+                "text":"Look at this sacrificial bowl. When you put a coin inside, you can obtain the gods' help for a short time. Just try it.",
+                "buttons":[
+                    {
+                        "name":"Okay."
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest1_3_0",
+                "npc_name":"Elder",
+                "text":"Excellent! To get from this island to the next, you will need a boat and some material. Destroy as many vases as you can to collect 16 wooden blocks. After this, you have to buy a ship at my friend's, the shipbuilder's. Then meet me at the harbor!",
+                "buttons":[
+                    {
+                        "name":"Okay.",
+                        "commands":[
+                            "/function quests/quest_1/task4"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest1_4_0",
+                "npc_name":"Elder",
+                "text":"You've got a boat? Great! Do you see the island behind me? This is Olympius. You will have to sail there and fulfill several tasks to get back your old strength. By means of this compass you should easily find your way. Meet me in front of the temple at the harbor of Olympius.",
+                "buttons":[
+                    {
+                        "name":"Alright.",
+                        "commands":[
+                            "/function quests/quest_1/task5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest2_0_0",
+                "npc_name":"Elder",
+                "text": "Welcome to Island of Olympius! Take these weapons and equip yourself. When you are ready, you can test them on some opponents. Tell me when you feel prepared.",
+                "buttons":[
+                    {
+                        "name":"Okay.",
+                        "commands":[
+                            "/function quests/quest_2/intro"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest2_1_0",
+                "npc_name":"Elder",
+                "text": "Are you ready to try your equipment?",
+                "buttons":[
+                    {
+                        "name":"Yes, I'm ready!",
+                        "commands":[
+                            "/function quests/quest_2/task1"
+                        ]
+                    },
+                    {
+                        "name":"No, I'm busy ..."
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest2_2_0",
+                "npc_name":"Elder",
+                "text": "Wow. I see that you are an adept fighter. I reckon you are already poised to start ... On the top of this mountain, there lives one of the most evil creatures of this island. If you defeat the monster, you will obtain a legendary reward. Be warned, however, it won't be easy. In case you do not feel prepared yet, look for better equipment and still practise a little bit.",
+                "buttons":[
+                    {
+                        "name":"Okay.",
+                        "commands":[
+                            "/function quests/quest_2/task3"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest2_2_1",
+                "npc_name":"Elder",
+                "text": "In case you do not feel prepared yet, look for better equipment and still practise a little bit.",
+                "buttons":[
+                    {
+                        "name":"Okay."
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest2_3_0",
+                "npc_name":"Elder",
+                "text": "Congratulations! Now you are master of the Hydra. You can ride it and fight together with it. §cIf you want the Hydra to take off while sitting on it, you must first look up into the sky.§r This way you can enter flight mode. When flying it while looking up at the same time, you will soar. When flying it while looking down at the same time, you will slide down.",
+                "buttons":[
+                    {
+                        "name":"Cool.",
+                        "commands":[
+                            "/dialogue open @e[type=npc:seher] @initiator quest2_3_1"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest2_3_1",
+                "npc_name":"Elder",
+                "text": "Additionally, if you sneak and interact with the Hydra at the same time, you can make it wait or follow you again. But the best thing is: §cWhen you press the jump button, you can command the Hydra to attack for you from the air§r!",
+                "buttons":[
+                    {
+                        "name":"Amazing.",
+                        "commands":[
+                            "/dialogue open @e[type=npc:seher] @initiator quest2_3_2"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest2_3_2",
+                "npc_name":"Elder",
+                "text": "Now there are three more tasks left, though, to gain back your true strength. It's up to you to decide which one you want to do first. Hint: You can always find me at the location the compass shows you.",
+                "buttons":[
+                    {
+                        "name":"Got it.",
+                        "commands":[
+                            "/function quests/quest_2/outro"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest_selection_main",
+                "npc_name":"Elder",
+                "text": "Now there are three more tasks left, though, to gain back your true strength. It's up to you to decide which one you want to do first. Find me at the location the compass shows you.",
+                "buttons":[
+                    {
+                        "name":"Quest §a[easy]",
+                        "commands":[
+                            "/function quests/quest_3/select"
+                        ]
+                    },
+                    {
+                        "name":"Quest §e[medium]",
+                        "commands":[
+                            "/function quests/quest_4/select"
+                        ]
+                    },
+                    {
+                        "name":"Quest §c[hard]",
+                        "commands":[
+                            "/function quests/quest_5/select"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest_selection_completed",
+                "npc_name":"Elder",
+                "text": "You've already completed this Quest. Select another one.",
+                "buttons":[
+                    {
+                        "name":"Okay",
+                        "commands":[
+                            "/dialogue open @e[type=npc:seher] @initiator quest_selection_main"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest_selection_3",
+                "npc_name":"Elder",
+                "text": "Do you want to activate the Quest: Carriage-Race Champion?",
+                "buttons":[
+                    {
+                        "name":"Yes!",
+                        "commands":[
+                            "/function quests/quest_3/intro"
+                        ]
+                    },
+                    {
+                        "name":"No ...",
+                        "commands":[
+                            "/dialogue open @e[type=npc:seher] @initiator quest_selection_main"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest_selection_4",
+                "npc_name":"Elder",
+                "text": "Do you want to activate the Quest: Master of the Arena?",
+                "buttons":[
+                    {
+                        "name":"Yes!",
+                        "commands":[
+                            "/function quests/quest_4/intro"
+                        ]
+                    },
+                    {
+                        "name":"No ...",
+                        "commands":[
+                            "/dialogue open @e[type=npc:seher] @initiator quest_selection_main"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest_selection_5",
+                "npc_name":"Elder",
+                "text": "Do you want to activate the Quest: The Creature of the Southern Island?",
+                "buttons":[
+                    {
+                        "name":"Yes!",
+                        "commands":[
+                            "/function quests/quest_5/intro"
+                        ]
+                    },
+                    {
+                        "name":"No ...",
+                        "commands":[
+                            "/dialogue open @e[type=npc:seher] @initiator quest_selection_main"
+                        ]
+                    }
+                ]
+            },
+
+            {
+                "scene_tag":"quest3_0_0",
+                "npc_name":"Elder",
+                "text": "Challenge your speed in an epic race across the island. You should find the start with the help of this compass. Meet me there!",
+                "buttons":[
+                    {
+                        "name":"Okay.",
+                        "commands":[
+                            "/function quests/quest_3/task1"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest3_1_0",
+                "npc_name":"Elder",
+                "text": "You've made up your mind? Well! A true demigod has to be a master of horse racing as well. Therefore, you have to complete a timed race across this island on your horse-drawn carriage. You have exactly 120 seconds to complete it. In order to find the way, you have to navigate the carriage from checkpoint to checkpoint. Are you ready?",
+                "buttons":[
+                    {
+                        "name":"Yes, I'm ready!",
+                        "commands":[
+                            "/function quests/quest_3/task2"
+                        ]
+                    },
+                    {
+                        "name":"No, I'm busy ..."
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest3_1_1",
+                "npc_name":"Elder",
+                "text": "A true demigod has to be a master of horse racing as well. Therefore, you have to complete a timed race across this island on your horse-drawn carriage. You have exactly 120 seconds to complete it. In order to find the way, you have to navigate the carriage from checkpoint to checkpoint."
+            },
+            {
+                "scene_tag":"quest3_1_2",
+                "npc_name":"Elder",
+                "text": "You were too slow. Just try again.",
+                "buttons":[
+                    {
+                        "name":"Alright.",
+                        "commands": [
+                            "/function quests/quest_3/task2"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest3_2_0",
+                "npc_name":"Elder",
+                "text": "Congratulations, you have successfully mastered this challenge. You are a true master of horse racing. As a reward, you will receive this unique artifact which I once snatched from an opponent in a battle many years ago. You have really deserved it.",
+                "buttons":[
+                    {
+                        "name":"Thanks.",
+                        "commands":[
+                            "/function quests/quest_3/outro"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest4_0_0",
+                "npc_name":"Elder",
+                "text": "Fight for glory and honor on the Arena Island! You should recognize the island by the two giant statues and the overgrown mountains. Talk to the Arena Chief over there to learn more.",
+                "buttons":[
+                    {
+                        "name":"Alright!",
+                        "commands":[
+                            "/function quests/quest_4/task1",
+                            "/dialogue change @e[type=npc:seher] quest4_0_1"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest4_0_1",
+                "npc_name":"Elder",
+                "text": "Fight for glory and honor on the Arena Island! You should recognize the island by the two giant statues and the overgrown mountains. Talk to the Arena Chief over there to learn more.",
+                "buttons":[
+                    {
+                        "name":"Alright!"
+                    }
+                ]
+            },
+
+            {
+                "scene_tag":"arena_idle",
+                "npc_name":"Arena Chief",
+                "text": "..."
+            },
+            {
+                "scene_tag":"quest4_1_0",
+                "npc_name":"Arena Chief",
+                "text": "You want to take part in the arena fights? Alright then. The rules are easy. In five rounds, more and more gladiators, mercenaries, and fighters will compete against each other.",
+                "buttons":[
+                    {
+                        "name":"Okay.",
+                        "commands":[
+                            "/dialogue open @e[type=npc:arena] @initiator quest4_1_1"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest4_1_1",
+                "npc_name":"Arena Chief",
+                "text": "After each round, the winner gets a prize. The one who is still upright in the end will receive a mighty artifact. You don't need to know anymore. Oh yes, and ... everything is allowed. May the fight begin!",
+                "buttons":[
+                    {
+                        "name":"Yes, I'm ready!",
+                        "commands":[
+                            "/function quests/quest_4/start"
+                        ]
+                    },
+                    {
+                        "name":"No, I'm busy ..."
+                    }
+                ]
+            },
+            {
+                "scene_tag":"arena_reset",
+                "npc_name":"Arena Chief",
+                "text": "You want to stop the fight? That is fine. Just talk to me if you want to try once more.",
+                "buttons":[
+                    {
+                        "name":"Yes.",
+                        "commands":[
+                            "/function quests/quest_4/reset_arena"
+                        ]
+                    },
+                    {
+                        "name":"Let's continue."
+                    }
+                ]
+            },
+            {
+                "scene_tag":"arena_redo_1",
+                "npc_name":"Arena Chief",
+                "text": "You want to take part in the arena fights again? Alright then. The rules are easy. In five rounds, more and more gladiators, mercenaries, and fighters will compete against each other.",
+                "buttons":[
+                    {
+                        "name":"Okay.",
+                        "commands":[
+                            "/dialogue open @e[type=npc:arena] @initiator quest4_1_1"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"arena_redo_2",
+                "npc_name":"Arena Chief",
+                "text": "After each round, the winner gets a prize. You don't need to know anymore. Oh yes, and ... everything is allowed. May the fight begin!",
+                "buttons":[
+                    {
+                        "name":"Yes, I'm ready!",
+                        "commands":[
+                            "/function arena/start"
+                        ]
+                    },
+                    {
+                        "name":"No, I'm busy ..."
+                    }
+                ]
+            },
+            {
+                "scene_tag":"arena_redo_reset",
+                "npc_name":"Arena Chief",
+                "text": "You want to stop the fight? That is fine. Just talk to me if you want to try once more.",
+                "buttons":[
+                    {
+                        "name":"Yes.",
+                        "commands":[
+                            "/function arena/reset_arena"
+                        ]
+                    },
+                    {
+                        "name":"Let's continue."
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest4_2_0",
+                "npc_name":"Arena Chief",
+                "text": "Congratulations, you have made it to the end. Therefore, you will get this unique artifact! Wear it wisely.",
+                "buttons":[
+                    {
+                        "name":"Amazing!",
+                        "commands":[
+                            "/function quests/quest_4/outro"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest4_2_1",
+                "npc_name":"Arena Chief",
+                "text": "Congratulations, you have made it to the end."
+            },
+
+            {
+                "scene_tag":"quest5_0_0",
+                "npc_name":"Elder",
+                "text": "I've heard about a powerful creature living deep inside Volcano Island nearby. Defeat it. Maybe you will get more treasures, artifacts or even better equipment there.",
+                "buttons":[
+                    {
+                        "name":"Okay.",
+                        "commands":[
+                            "/function quests/quest_5/task1"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest5_1_0",
+                "npc_name":"Elder",
+                "text": "Hey there. As it looks like, your Hydra is frightened of the creature inside the cave. You will have to face the battle alone. Good luck!",
+                "buttons":[
+                    {
+                        "name":"Yes, I'm ready!",
+                        "commands":[
+                            "/function quests/quest_5/task2"
+                        ]
+                    },
+                    {
+                        "name":"No, I'm busy ...",
+                        "commands": [
+                            "/dialogue open @e[type=npc:seher] @initiator quest5_1_1"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest5_1_1",
+                "npc_name":"Elder",
+                "text": "You want to leave here again? That is fine. Just talk to me if you want to try once more.",
+                "buttons":[
+                    {
+                        "name":"I want to leave.",
+                        "commands": [
+                            "/function quests/quest_5/reset"
+                        ]
+                    },
+                    {
+                        "name":"I want to stay."
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quest5_2_0",
+                "npc_name":"Elder",
+                "text": "I was starting to think I wouldn't see you again! Congratulations, you are now in possession of the Spear of Medusa. When you are traveling through the other islands, you might find other epic artifacts there!",
+                "buttons":[
+                    {
+                        "name":"Okay.",
+                        "commands":[
+                            "/function quests/quest_5/outro"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quests_finished",
+                "npc_name":"Elder",
+                "text": "Congratulations! You have successfully completed all of the quests. Now that you possess all the legendary artifacts along with being the master of the Hydra, you have recovered your old strength. Besides, now you can use the full potential of the Questbook. Check it out and enjoy your further adventure.",
+                "buttons":[
+                    {
+                        "name":"Okay.",
+                        "commands":[
+                            "/dialogue open @s @initiator quests_finished_2"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"quests_finished_2",
+                "npc_name":"Elder",
+                "text": "Congratulations! You have successfully completed all of the quests. Now that you possess all the legendary artifacts along with being the master of the Hydra, you have recovered your old strength. Besides, now you can use the full potential of the Questbook. Check it out and enjoy your further adventure.",
+                "buttons":[
+                    {
+                        "name":"Great!"
+                    },
+                    {
+                        "name": "Get Questbook",
+                        "commands": [
+                            "/give @initiator greek:quest 1 0 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_inventory\" }}"
+                        ]
+                    },
+                    {
+                        "name": "Delete Questbook",
+                        "commands": [
+                            "/clear @initiator greek:quest"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"questbook_start",
+                "npc_name":"Questbook",
+                "text": "Congratulations! You have successfully completed all of the quests. Now you have access to all features of the Questbook. Enjoy them.",
+                "buttons":[
+                    {
+                        "name":"Next Page.",
+                        "commands":[
+                            "/dialogue open @s @initiator questbook_1"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"questbook_1",
+                "npc_name":"Questbook [1]",
+                "text": "You can switch to survival mode to start a new adventure outside the ancient realm or build your own house on top of any of the islands.",
+                "buttons":[
+                    {
+                        "name":"Previous Page.",
+                        "commands":[
+                            "/dialogue open @s @initiator questbook_start"
+                        ]
+                    },
+                    {
+                        "name":"Apply.",
+                        "commands":[
+                            "/execute @p[tag=questbook] ~ ~ ~ function quests/questbook/page_1",
+                            "/execute @p[tag=questbook] ~ ~ ~ tag @s remove questbook",
+                            "/event entity @s evt:die"
+                        ]
+                    },
+                    {
+                        "name":"Next Page.",
+                        "commands":[
+                            "/dialogue open @s @initiator questbook_2"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"questbook_2",
+                "npc_name":"Questbook [2]",
+                "text": "You can switch your game mode to adventure mode to continue your journey of discovering the ancient islands. ",
+                "buttons":[
+                    {
+                        "name":"Previous Page.",
+                        "commands":[
+                            "/dialogue open @s @initiator questbook_1"
+                        ]
+                    },
+                    {
+                        "name":"Apply.",
+                        "commands":[
+                            "/execute @p[tag=questbook] ~ ~ ~ function quests/questbook/page_2",
+                            "/execute @p[tag=questbook] ~ ~ ~ tag @s remove questbook",
+                            "/event entity @s evt:die"
+                        ]
+                    },
+                    {
+                        "name":"Next Page.",
+                        "commands":[
+                            "/dialogue open @s @initiator questbook_3"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"questbook_3",
+                "npc_name":"Questbook [3]",
+                "text": "You can teleport to the spawn of the game.",
+                "buttons":[
+                    {
+                        "name":"Previous Page.",
+                        "commands":[
+                            "/dialogue open @s @initiator questbook_2"
+                        ]
+                    },
+                    {
+                        "name":"Apply.",
+                        "commands":[
+                            "/execute @p[tag=questbook] ~ ~ ~ function quests/questbook/page_3",
+                            "/execute @p[tag=questbook] ~ ~ ~ tag @s remove questbook",
+                            "/event entity @s evt:die"
+                        ]
+                    },
+                    {
+                        "name":"Next Page.",
+                        "commands":[
+                            "/dialogue open @s @initiator questbook_4"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"questbook_4",
+                "npc_name":"Questbook [4]",
+                "text": "You can set a home point to which you can return later.\n§4§lAttention: §r§4Only one home point can exist in the world. Another already existing one will be irretrievably deleted!",
+                "buttons":[
+                    {
+                        "name":"Previous Page.",
+                        "commands":[
+                            "/dialogue open @s @initiator questbook_3"
+                        ]
+                    },
+                    {
+                        "name":"Apply.",
+                        "commands":[
+                            "/execute @p[tag=questbook] ~ ~ ~ function quests/questbook/page_4",
+                            "/execute @p[tag=questbook] ~ ~ ~ tag @s remove questbook",
+                            "/event entity @s evt:die"
+                        ]
+                    },
+                    {
+                        "name":"Next Page.",
+                        "commands":[
+                            "/dialogue open @s @initiator questbook_5"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag":"questbook_5",
+                "npc_name":"Questbook [5]",
+                "text": "You can teleport to a previously set home point.",
+                "buttons":[
+                    {
+                        "name":"Previous Page.",
+                        "commands":[
+                            "/dialogue open @s @initiator questbook_4"
+                        ]
+                    },
+                    {
+                        "name":"Apply.",
+                        "commands":[
+                            "/execute @p[tag=questbook] ~ ~ ~ function quests/questbook/page_5",
+                            "/execute @p[tag=questbook] ~ ~ ~ tag @s remove questbook",
+                            "/event entity @s evt:die"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

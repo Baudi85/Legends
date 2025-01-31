@@ -1,0 +1,14 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:item": {
+		"description": {
+			"identifier": "greek:medusa_spear",
+			"category": "Equipment"
+		},
+		"components": {
+			"minecraft:icon": "item_texture_weapons_medusa_spear",
+			"minecraft:render_offsets": "tools",
+			"minecraft:use_animation": "crossbow"
+		}
+	}
+}

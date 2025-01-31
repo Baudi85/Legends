@@ -1,0 +1,16 @@
+{
+    "format_version": "1.16.0",
+    "animation_controllers": {
+        "controller.animation.item_on_ground": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [ 
+                        "/ride @s[name=\"§3Medusa's Spear\"] summon_rider custom_item:medusa_spear",
+                        "/ride @s[name=\"§6Ancient Sword\"] summon_rider custom_item:sword"
+                    ]
+                }
+            }
+        }
+    }
+}

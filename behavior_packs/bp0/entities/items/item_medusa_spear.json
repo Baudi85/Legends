@@ -1,0 +1,41 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "custom_item:medusa_spear",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "item:die":{"minecraft:instant_despawn":{}}
+    },
+    "components": {
+      "minecraft:environment_sensor":{
+        "triggers": [
+          {"filters": {"all_of": [{"test":"is_riding", "operator":"==","subject":"self", "value":false}]}, "event": "item:die"}
+        ]
+      },
+      "minecraft:scale":{"value":0.6},
+      "minecraft:type_family":{"family": ["item_model"]},
+      "minecraft:physics": {"has_gravity": true},        
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },         
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:collision_box":{
+        "height": 0,
+        "width": 0
+      }
+    },  
+    "events": {
+      "item:die":{"add":{"component_groups":["item:die"]}}
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.quest.bowl": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {"quest": "query.is_baby"}
+                    ]
+                },
+                "quest": {
+                    "transitions": [
+                        {"activated": "query.variant == 1"}
+                    ]
+                },
+                "activated": {
+                    "on_entry": [
+                        "/execute @e[type=minecraft:armor_stand,name=quest_1,scores={quests=2}] ~ ~ ~ function quests/quest_1/task3"
+                    ]
+                }
+            }
+        },
+        "controller.animation.quest.hydra": {
+            "initial_state": "init_quest",
+            "states": {
+                "init_quest": {
+                    "transitions": [
+                        {"init_defeated": "query.variant == 2"}
+                    ]
+                },
+                "init_defeated": {
+                    "transitions": [
+                        {"quest_defeated": "query.variant == 3"}
+                    ]
+                },
+                "quest_defeated": {
+                    "on_entry": [
+                        "/function quests/quest_2/task5"
+                    ],
+                    "transitions": [
+                        {"quest_tamed": "query.variant == 4"}
+                    ]
+                },
+                "quest_tamed": {
+                    "on_entry": [
+                        "/function quests/quest_2/task6"
+                    ]
+                }
+            }
+        },
+        "controller.animation.quest.race.timer": {
+            "initial_state": "init",
+            "states": {
+                "init": {
+                    "transitions": [
+                        {"race_3": "query.mark_variant == 3"},
+                        {"race_2": "query.mark_variant == 2"},
+                        {"race_1": "query.mark_variant == 1"},
+                        {"race_0": "query.mark_variant == 0"}
+                    ]
+                },
+                "race_3": {
+                    "transitions": [
+                        {"race_2": "query.mark_variant == 2"}
+                    ]
+                },
+                "race_2": {
+                    "on_entry": ["/function quests/quest_3/countdown2"],
+                    "transitions": [
+                        {"race_1": "query.mark_variant == 1"}
+                    ]
+                },
+                "race_1": {
+                    "on_entry": ["/function quests/quest_3/countdown1"],
+                    "transitions": [
+                        {"race_0": "query.mark_variant == 0"}
+                    ]
+                },
+                "race_0": {
+                    "on_entry": ["/function quests/quest_3/countdown0"],
+                    "transitions": [
+                        {"race_3": "query.mark_variant == 3"}
+                    ]
+                }
+            }
+        },
+        "controller.animation.quest.arena.timer": {
+            "initial_state": "offline",
+            "states": {
+                "offline": {
+                    "transitions": [
+                        {"countdown3": "query.variant == 3"},
+                        {"countdown2": "query.variant == 2"},
+                        {"countdown1": "query.variant == 1"},
+                        {"countdown0": "query.variant == 0"},
+                        {"prepare": "query.variant == 4"}
+                    ]
+                },
+                "countdown3": {
+                    "on_entry": ["/function quests/quest_4/countdown3"],
+                    "transitions": [
+                        {"countdown2": "query.variant == 2"},
+                        {"offline": "query.variant == 5"}
+                    ]
+                },
+                "countdown2": {
+                    "on_entry": ["/function quests/quest_4/countdown2"],
+                    "transitions": [
+                        {"countdown1": "query.variant == 1"},
+                        {"offline": "query.variant == 5"}
+                    ]
+                },
+                "countdown1": {
+                    "on_entry": ["/function quests/quest_4/countdown1"],
+                    "transitions": [
+                        {"countdown0": "query.variant == 0"},
+                        {"offline": "query.variant == 5"}
+                    ]
+                },
+                "countdown0": {
+                    "on_entry": ["/function quests/quest_4/countdown0"],
+                    "transitions": [
+                        {"offline": "query.variant == 5"}
+                    ]
+                },
+                "prepare": {
+                    "on_entry": ["/function quests/quest_4/prepare"],
+                    "transitions": [
+                        {"offline": "query.variant == 5"},
+                        {"countdown3": "query.variant == 3"}
+                    ]
+                }
+            }
+        },
+        "controller.animation.quest.medusa_spawn": {
+            "initial_state": "offline",
+            "states": {
+                "offline": {
+                    "transitions": [
+                        {"state_0": "query.variant == 0"}
+                    ],
+                    "on_entry": ["/function quests/quest_5/spawning/reset"]
+                },
+                "state_0":{
+                    "on_entry": ["/function quests/quest_5/spawning/s0"],
+                    "transitions": [
+                        {"state_1": "query.variant == 1"},
+                        {"offline": "query.variant == 6"}
+                    ]
+                },
+                "state_1":{
+                    "on_entry": ["/function quests/quest_5/spawning/s1"],
+                    "transitions": [
+                        {"state_2": "query.variant == 2"},
+                        {"offline": "query.variant == 6"}
+                    ]
+                },
+                "state_2":{
+                    "on_entry": ["/function quests/quest_5/spawning/s2"],
+                    "transitions": [
+                        {"state_3": "query.variant == 3"},
+                        {"offline": "query.variant == 6"}
+                    ]
+                },
+                "state_3":{
+                    "on_entry": ["/function quests/quest_5/spawning/s3"],
+                    "transitions": [
+                        {"state_4": "query.variant == 4"},
+                        {"offline": "query.variant == 6"}
+                    ]
+                },
+                "state_4":{
+                    "on_entry": ["/function quests/quest_5/spawning/s4"],
+                    "transitions": [
+                        {"state_5": "query.variant == 5"},
+                        {"offline": "query.variant == 6"}
+                    ]
+                },
+                "state_5":{
+                    "on_entry": ["/function quests/quest_5/spawning/s5"],
+                    "transitions": [
+                        {"offline": "query.variant == 6"}
+                    ]
+                }
+            }
+        }
+    }
+}

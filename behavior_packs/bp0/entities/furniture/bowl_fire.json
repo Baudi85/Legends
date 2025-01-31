@@ -1,0 +1,74 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "greek:bowl_fire",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "rotate_controller": 	"controller.animation.rotate",
+        "texture_controller": "controller.animation.fire_bowl",
+        "texture_animation": "animation.fire_bowl.texture"
+
+      },
+      "scripts": {
+        "animate": ["rotate_controller", "texture_controller"]
+      }
+    },
+    "component_groups": {
+      "cg:interact":{
+        "minecraft:interact":{
+          "interactions":[
+            {
+              "on_interact": {
+                "filters": {"all_of": [	 {"test": "has_equipment","domain": "hand","subject": "other","value": "blaze_rod"}]},
+                "event": "evt:rotate"
+              },
+              "use_item": false,
+              "swing": true 
+            }
+          ]
+        }
+      },
+      "cg:rotating": {
+        "minecraft:is_baby": {}
+      },
+      "cg:render0":{"minecraft:variant": {"value": 0}},
+      "cg:render1":{"minecraft:variant": {"value": 1}},
+      "cg:render2":{"minecraft:variant": {"value": 2}},
+      "cg:render3":{"minecraft:variant": {"value": 3}},
+      "cg:render4":{"minecraft:variant": {"value": 4}},
+      "cg:render5":{"minecraft:variant": {"value": 5}},
+      "cg:render6":{"minecraft:variant": {"value": 6}},
+      "cg:render7":{"minecraft:variant": {"value": 7}}
+    },
+    "components": {
+      "minecraft:damage_sensor": {"triggers": {"cause": "all", "deals_damage": false}},
+      "minecraft:knockback_resistance": {"value": 1000.0},
+      "minecraft:physics": {"has_gravity": true},        
+      "minecraft:type_family":{"family": ["greek", "furnature"]},         
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:collision_box": {
+        "height": 0.5,
+        "width": 0.5
+      }
+    },  
+    "events": {
+      "minecraft:entity_spawned": {"add": { "component_groups": ["cg:interact", "cg:render0"]}},
+      "evt:rotate": {"add":{"component_groups": ["cg:rotating"]}, "remove": {"component_groups": ["cg:interact"]}},
+      "evt:reset0": {"add": {"component_groups": ["cg:interact", "cg:render1"]}, "remove": {"component_groups": ["cg:rotating", "cg:render0"]}},
+      "evt:reset1": {"add": {"component_groups": ["cg:interact", "cg:render2"]}, "remove": {"component_groups": ["cg:rotating", "cg:render1"]}},
+      "evt:reset2": {"add": {"component_groups": ["cg:interact", "cg:render3"]}, "remove": {"component_groups": ["cg:rotating", "cg:render2"]}},
+      "evt:reset3": {"add": {"component_groups": ["cg:interact", "cg:render4"]}, "remove": {"component_groups": ["cg:rotating", "cg:render3"]}},
+      "evt:reset4": {"add": {"component_groups": ["cg:interact", "cg:render5"]}, "remove": {"component_groups": ["cg:rotating", "cg:render4"]}},
+      "evt:reset5": {"add": {"component_groups": ["cg:interact", "cg:render6"]}, "remove": {"component_groups": ["cg:rotating", "cg:render5"]}},
+      "evt:reset6": {"add": {"component_groups": ["cg:interact", "cg:render7"]}, "remove": {"component_groups": ["cg:rotating", "cg:render6"]}},
+      "evt:reset7": {"add": {"component_groups": ["cg:interact", "cg:render0"]}, "remove": {"component_groups": ["cg:rotating", "cg:render7"]}}
+
+    }
+  }
+}

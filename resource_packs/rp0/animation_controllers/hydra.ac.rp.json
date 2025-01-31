@@ -1,0 +1,93 @@
+{
+    "format_version": "1.19.0",
+    "animation_controllers": {
+        "controller.animation.hydra.movement": {
+            "initial_state": "idle",
+            "states": {
+                "idle": {
+                    "animations": [
+                        "idle"
+                    ],
+                    "transitions": [
+                        {"fly": "!query.is_ignited"},
+                        {"walk":  "query.is_ignited && query.modified_move_speed >= 0.2"},
+                        {"death": "query.variant == 3"}
+                    ],
+                    "blend_transition": 0.25
+                },
+
+                "walk": {
+                    "animations": [
+                        "walk"
+                    ],
+                    "transitions": [
+                        {"fly": "!query.is_ignited"},
+                        {"idle":  "query.is_ignited && query.modified_move_speed < 0.2"},
+                        {"death": "query.variant == 3"}
+                           
+                    ],
+                    "blend_transition": 0.25
+                },
+
+                "fly": {
+                    "animations": [
+                        "fly",
+                        "fly_sound"
+                    ],
+                    "transitions": [
+                        {"walk":  "query.is_ignited && query.modified_move_speed >= 0.2"},
+                        {"idle":  "query.is_ignited && query.modified_move_speed < 0.2"},
+                        {"death": "query.variant == 3"}
+                           
+                    ],
+                    "blend_transition": 0.25
+                },
+
+                "death": {
+                    "animations": [
+                        "defeated"
+                    ],
+                    "transitions": [
+                        {"idle":  "query.variant == 4"}
+                    ],
+                    "blend_transition": 0.3
+                }
+            }
+        },
+
+        "controller.animation.hydra.attacking": {
+            "initial_state": "on_ground",
+            "states": {
+                "on_ground": {
+                    "transitions": [
+                        {"in_air": "!query.is_on_ground"},
+                        {"attack_ground": "variable.attack_time > 0.0"}
+                    ]
+                },
+                "in_air": {
+                    "transitions": [
+                        {"on_ground": "query.is_on_ground"},
+                        {"attack_air": "query.is_sheared || query.is_stunned || query.is_charged || query.is_ignited"}
+                    ]
+                },
+                "attack_air": {
+                    "animations": [
+                        "flyattack"
+                    ],
+                    "transitions": [
+                        {"in_air": "!query.is_sheared && !query.is_stunned && !query.is_charged && !query.is_ignited"}
+                    ]
+                },
+                "attack_ground": {
+                    "animations": [
+                        "attack"
+                    ],
+                    "transitions": [
+                        {"on_ground": "query.all_animations_finished"}
+                    ]
+                }
+
+            }
+        }
+    }
+}

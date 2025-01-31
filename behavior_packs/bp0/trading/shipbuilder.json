@@ -1,0 +1,288 @@
+{
+    "tiers": [
+      {
+        "groups": [
+          {
+            "trades": [
+              {
+                "wants": [
+                  {
+                    "item": "minecraft:log", 
+                    "quantity": 16 
+                  }  
+                ],
+                "gives": [  
+                  {   
+                    "item": "greek:spawn_boat",
+                    "quantity": 1
+                  }
+                ],
+                "trader_exp": 8,
+                "reward_exp": true
+              },   
+              {
+                "wants": [  {   "item": "minecraft:emerald", "quantity": 32    }  ],
+                "gives": [  
+                  {   
+                    "item": "greek:spawn_carriage",
+                    "quantity": 1
+                  }
+                ],
+                "trader_exp": 10,
+                "reward_exp": true
+              },
+
+              {
+                "wants": [  {   "item": "minecraft:emerald", "quantity":12 }  ],
+                "gives": [  {   "item": "minecraft:iron_sword"   }  ],
+                "trader_exp": 2,
+                "reward_exp": true
+              },
+              {
+                "wants": [  {   "item": "minecraft:emerald", "quantity": 6 }  ],
+                "gives": [  {   "item": "minecraft:iron_axe"   }  ],
+                "trader_exp": 2,
+                "reward_exp": true
+              },
+              {
+                "wants": [
+                  {
+                    "item": "minecraft:emerald", 
+                    "quantity": 32
+                  }  
+                ],
+                "gives": [  
+                  {   
+                    "item": "greek:sword",
+                    "quantity": 1,
+                    "functions": [
+                      {
+                        "function": "set_lore",
+                        "lore": [
+                          "\n§9+8 Attack Damage"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "trader_exp": 8,
+                "reward_exp": true
+              },
+              {
+                "wants": [  {   "item": "minecraft:emerald", "quantity": 12 }  ],
+                "gives": [
+                  {   
+                    "item": "minecraft:golden_helmet",
+                    "functions": [
+                      {
+                        "function": "specific_enchants",
+                        "enchants": [
+                          {
+                            "id": "unbreaking",
+                            "level": 3
+                          }
+                        ]
+                      }
+                    ]   
+                  }  
+                ],
+                "trader_exp": 2,
+                "reward_exp": true
+              },
+              {
+                "wants": [  {   "item": "minecraft:emerald", "quantity": 16 }  ],
+                "gives": [
+                  {   
+                    "item": "minecraft:golden_chestplate",
+                    "functions": [
+                      {
+                        "function": "specific_enchants",
+                        "enchants": [
+                          {
+                            "id": "unbreaking",
+                            "level": 3
+                          }
+                        ]
+                      }
+                    ]   
+                  }  
+                ],
+                "trader_exp": 2,
+                "reward_exp": true
+              },
+              {
+                "wants": [  {   "item": "minecraft:emerald", "quantity": 16 }  ],
+                "gives": [
+                  {   
+                    "item": "minecraft:golden_leggings",
+                    "functions": [
+                      {
+                        "function": "specific_enchants",
+                        "enchants": [
+                          {
+                            "id": "unbreaking",
+                            "level": 3
+                          }
+                        ]
+                      }
+                    ]   
+                  }  
+                ],
+                "trader_exp": 2,
+                "reward_exp": true
+              },
+              {
+                "wants": [  {   "item": "minecraft:emerald", "quantity": 12 }  ],
+                "gives": [
+                  {   
+                    "item": "minecraft:golden_boots",
+                    "functions": [
+                      {
+                        "function": "specific_enchants",
+                        "enchants": [
+                          {
+                            "id": "unbreaking",
+                            "level": 3
+                          }
+                        ]
+                      }
+                    ]   
+                  }  
+                ],
+                "trader_exp": 2,
+                "reward_exp": true
+              },
+              {
+                "wants": [
+                  {
+                    "item": "minecraft:emerald", 
+                    "quantity": 6
+                  }  
+                ],
+                "gives": [  
+                  {   
+                    "item": "minecraft:shield",
+                    "quantity": 1
+                  }
+                ],
+                "trader_exp": 8,
+                "reward_exp": true
+              },
+              {
+                "wants": [
+                  {
+                    "item": "minecraft:emerald", 
+                    "quantity": 16
+                  }  
+                ],
+                "gives": [  
+                  {   
+                    "item": "minecraft:bow",
+                    "quantity": 1
+                  }
+                ],
+                "trader_exp": 8,
+                "reward_exp": true
+              },
+              {
+                "wants": [
+                  {
+                    "item": "minecraft:emerald", 
+                    "quantity": 16
+                  }  
+                ],
+                "gives": [  
+                  {   
+                    "item": "minecraft:crossbow",
+                    "quantity": 1
+                  }
+                ],
+                "trader_exp": 8,
+                "reward_exp": true
+              },
+              {
+                "wants": [
+                  {
+                    "item": "minecraft:emerald", 
+                    "quantity": 1
+                  }  
+                ],
+                "gives": [  
+                  {   
+                    "item": "minecraft:arrow",
+                    "quantity": 3
+                  }
+                ],
+                "trader_exp": 8,
+                "reward_exp": true
+              },
+              {
+                "wants": [
+                  {
+                    "item": "minecraft:emerald", 
+                    "quantity": 2
+                  }  
+                ],
+                "gives": [  
+                  {   
+                    "item": "minecraft:golden_apple",
+                    "quantity": 1
+                  }
+                ],
+                "trader_exp": 8,
+                "reward_exp": true
+              },
+              {
+                "wants": [
+                  {
+                    "item": "minecraft:emerald", 
+                    "quantity": 1
+                  }  
+                ],
+                "gives": [  
+                  {   
+                    "item": "minecraft:cooked_porkchop",
+                    "quantity": 2
+                  }
+                ],
+                "trader_exp": 8,
+                "reward_exp": true
+              },
+              {
+                "wants": [
+                  {
+                    "item": "minecraft:emerald", 
+                    "quantity": 1
+                  }  
+                ],
+                "gives": [  
+                  {   
+                    "item": "minecraft:bread",
+                    "quantity": 2
+                  }
+                ],
+                "trader_exp": 8,
+                "reward_exp": true
+              },
+              {
+                "wants": [
+                  {
+                    "item": "minecraft:brick", 
+                    "quantity": 16
+                  }  
+                ],
+                "gives": [  
+                  {   
+                    "item": "minecraft:emerald",
+                    "quantity": 1
+                  }
+                ],
+                "trader_exp": 8,
+                "reward_exp": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

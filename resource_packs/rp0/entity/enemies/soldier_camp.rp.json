@@ -1,0 +1,31 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "greek:camp",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entities/arena",
+				"invis": "textures/entities/empty"
+			},
+			"geometry": {
+				"default": "geometry.npc_arena"
+			},
+			"render_controllers": ["controller.render.soldier_camp"],
+
+			"animations": {
+				"idle": "animation.npc_ar.idle2",
+				"activated": "animation.npc_sold.hit"
+			},
+			"animation_controllers" :[
+				{"idle": "controller.animation.soldier_camp.generic"}
+			],
+			"spawn_egg": {
+				"base_color": "#aa55ff",
+				"overlay_color": "#aaffff"
+			}
+		}
+	}
+}

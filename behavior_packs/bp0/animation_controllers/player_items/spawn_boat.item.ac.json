@@ -1,0 +1,30 @@
+{
+	"format_version": "1.8.0",
+	"animation_controllers": {
+		"controller.animation.player.use_item.spawn_boat": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"on_entry": [
+					],
+					"transitions": [
+						{
+							"use_item": "(query.is_using_item) && (query.get_equipped_item_name =='spawn_boat')"
+						}
+					]
+				},
+				"use_item": {
+					"on_entry": [
+						"/execute @s ~ ~ ~ summon greek:boat ^ ^ ^2",
+						"/clear @s greek:spawn_boat 0 1"
+					],
+					"transitions": [
+						{
+							"default": "(query.is_using_item == 0)"
+						}
+					]
+				}
+			}
+		}
+	}
+}

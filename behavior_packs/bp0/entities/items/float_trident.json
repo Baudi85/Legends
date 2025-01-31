@@ -1,0 +1,94 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "float_item:trident",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "contact": "controller.animation.float_item.contact.trident"
+      },
+      "scripts": {
+        "animate": [
+          "contact"
+        ]
+      }
+    },
+    "component_groups": {
+      "cg:despawn":{
+        "minecraft:instant_despawn": {}
+      },
+      "cg:contact":{
+        "minecraft:is_sheared": {},
+        "minecraft:timer": {
+          "time": 0.3,
+          "looping": false,
+          "time_down_event": {
+            "event": "evt:despawn",
+            "target": "self"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "height": 0,
+        "width": 0
+      },
+      "minecraft:tick_world": {
+        "distance_to_players": 128,
+        "never_despawn": true,
+        "radius": 2
+      },
+      "minecraft:scale": {
+        "value": 1.2
+      },
+      "minecraft:knockback_resistance": {"value": 1},
+      "minecraft:physics": {"has_gravity": true},
+      "minecraft:type_family":{
+        "family": ["greek", "misc"]
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:entity_sensor": {
+        "sensor_range": 0.5, 
+        "relative_range": true,
+        "require_all": false,
+        "minimum_count": 1,
+        "event_filters": {
+          "test": "is_family",
+          "subject": "other",
+          "value": "player"
+        },
+        "event": "evt:contact"
+      }
+    },
+    "events": {
+      "evt:despawn":{
+        "add": {
+          "component_groups": [
+            "cg:despawn"
+          ]
+        }
+      },
+      "evt:contact":{
+        "add": {
+          "component_groups": [
+            "cg:contact"
+          ]
+        }
+      }
+    }
+  }
+}

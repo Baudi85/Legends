@@ -1,0 +1,118 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.medusa.attack": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "attack": "query.is_delayed_attacking == 1"
+                        }
+                    ]
+                    
+                },
+                "attack": {
+                    "animations": [
+                        "attack"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.is_delayed_attacking == 0"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.medusa.stun": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "stun": "query.variant == 1"
+                        }
+                    ]
+                    
+                },
+                "stun": {
+                    "animations": [
+                        "stun"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.variant != 1"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.medusa.move": {
+            "initial_state": "idle",
+
+            "states": {
+                "idle": {
+                    "animations": [
+                        "idle"
+                    ],
+                    "transitions": [
+                        {"move" : "query.modified_move_speed > 0.1"}
+                    ],
+                    "blend_transition": 0.4
+                },
+                "move": {
+                    "animations": [
+                        "move"
+                    ],
+                    "transitions": [
+                        {"idle" : "query.modified_move_speed < 0.1"}
+                    ],
+                    "blend_transition": 0.4
+                }
+            }
+        },
+        "controller.animation.medusa.all_attacks": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {"attack": "query.is_delayed_attacking == 1"},
+                        {"stun_main": "query.variant == 1"}
+                    ]
+                },
+                "attack": {
+                    "animations": [
+                        "attack"
+                    ],
+                    "transitions": [
+                        {"default": "query.is_delayed_attacking == 0"}
+                    ]
+                },
+                "stun_main": {
+                    "animations": [
+                        "stun"
+                    ],
+                    "transitions": [
+                        {"default": "query.variant != 1"},
+                        {"stun_attacking": "query.is_delayed_attacking == 1 && query.all_animations_finished"}
+                    ]
+                },
+
+
+                "stun_attacking": {
+                    "animations": [
+                        "attack"
+                    ],
+                    "transitions": [
+                        {"stun_noanim": "query.is_delayed_attacking == 0"}
+                    ]
+                },
+                "stun_noanim": {
+                    "transitions": [
+                        {"default": "query.variant != 1"}
+                    ]
+                }
+            }
+        }
+    }
+}

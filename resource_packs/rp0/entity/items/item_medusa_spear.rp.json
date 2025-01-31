@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "custom_item:medusa_spear",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/weapons/medusa_staff.png"
+      },
+      "geometry": {
+        "default": "geometry.item_medusa_staff"
+      },
+      "render_controllers": [ "controller.render.onetexture" ],
+      "animations": {"idle":"animation.items.rotate"},
+      "animation_controllers":[{"general":"controller.animation.idle"}]
+    }
+  }
+} 

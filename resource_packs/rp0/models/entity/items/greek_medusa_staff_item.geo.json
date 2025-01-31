@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.item_medusa_staff",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [0, 1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "item",
+					"pivot": [0, 16, 1],
+					"rotation": [-45, 0, 0],
+					"cubes": [
+						{"origin": [-0.5, 17, -13], "size": [1, 1, 35], "uv": [0, 0]},
+						{"origin": [-0.5, 16, -16], "size": [1, 3, 3], "uv": [14, 0]},
+						{"origin": [0.5, 13, -24], "size": [0, 6, 13], "uv": [0, 0]},
+						{"origin": [0.5, 18, 18], "size": [0, 2, 6], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,73 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "offering_bowl:resistance",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations" : {
+        "effect_controller" : "controller.animation.bowl",
+        "effect_animation": "animation.bowl.resistance",
+        "init": "controller.animation.init",
+        "quest_controller": "controller.animation.quest.bowl"
+      },
+      "scripts" : {
+        "animate" : ["effect_controller", "init", "quest_controller"]
+      }
+    },
+    "component_groups": {
+      "cg:quest":{
+        "minecraft:is_baby": {}
+      },
+      "cg:die":{
+        "minecraft:instant_despawn": {}
+      },
+      "cg:clear":{
+        "minecraft:variant": {"value": 0},
+        "minecraft:interact":{
+          "interactions":[
+            {
+              "on_interact": {
+                "filters": {"all_of": [	 {"test": "has_equipment","domain": "hand","subject": "other","value": "emerald"}]},
+                "event": "evt:activate"
+              },
+              "use_item": true,
+              "swing": true,
+              "play_sounds": "misc.sacrificial_bowl",
+              "interact_text": "action.interact.bowl"  
+            }
+          ]
+        }
+      },
+      "cg:effect": {
+        "minecraft:variant": {"value": 1},
+        "minecraft:tick_world": {
+          "radius":2
+        },
+        "minecraft:timer": {
+          "looping":false,
+          "time": 300,
+          "time_down_event": {"event": "evt:clear"}
+        }
+      }
+    },
+    "components": {
+      "minecraft:damage_sensor": {"triggers": {"cause": "all", "deals_damage": false}},
+      "minecraft:knockback_resistance": {"value": 1},
+      "minecraft:physics": {"has_gravity": true},        
+      "minecraft:type_family":{"family": ["greek", "offering_bowl"]},         
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },  
+    "events": {
+      "minecraft:entity_spawned": {"add": { "component_groups": ["cg:clear"]}},
+      "evt:activate": { "remove": {"component_groups":["cg:clear"]}, "add":{"component_groups":["cg:effect"]}},
+      "evt:clear": {"add":{"component_groups": ["cg:clear"]}, "remove": {"component_groups": ["cg:effect"]}},
+      "evt:quest":{"add": {"component_groups": ["cg:quest"]}},
+      "evt:die":{"add": {"component_groups": ["cg:die"]}}
+    }
+  }
+}

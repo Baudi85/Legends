@@ -1,0 +1,30 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.bowl": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [ 
+                        {"effect": "query.variant==1"}
+                    ]
+                },
+                "effect": {
+                    "on_entry": [
+                        "/execute @s ~ ~ ~ playsound misc.sacrificial_bowl @a[r=10] ~ ~ ~ 1",
+                        "/execute @s[type=offering_bowl:haste] ~ ~ ~ tellraw @a[r=3] {\"rawtext\": [{\"text\": \"You’ve earned the blessing of the gods for the next 10 minutes:\n§aYou feel like you can knock down walls.\n\"}]}",
+                        "/execute @s[type=offering_bowl:resistance] ~ ~ ~ tellraw @a[r=3] {\"rawtext\": [{\"text\": \"You’ve earned the blessing of the gods for the next 10 minutes:\n§5You feel unstoppable.\n\"}]}",
+                        "/execute @s[type=offering_bowl:speed] ~ ~ ~ tellraw @a[r=3] {\"rawtext\": [{\"text\": \"You’ve earned the blessing of the gods for the next 10 minutes:\n§bYour steps feel swifter.\n\"}]}",
+                        "/execute @s[type=offering_bowl:strength] ~ ~ ~ tellraw @a[r=3] {\"rawtext\": [{\"text\": \"You’ve earned the blessing of the gods for the next 10 minutes:\n§cYour arms feel stronger.\n\"}]}" 
+                    ],
+                    "animations": [ 
+                        "effect_animation"
+                    ],
+                    "transitions": [ 
+                        {"default": "query.variant==0"}
+                    ]
+                }
+            }
+        }
+    }
+}

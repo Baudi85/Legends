@@ -1,0 +1,69 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.medusa_staff",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [0, 1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "waist",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "head",
+					"parent": "body",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "hat",
+					"parent": "head",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "rightArm",
+					"parent": "body",
+					"pivot": [-5, 22, 0]
+				},
+				{
+					"name": "rightItem",
+					"parent": "rightArm",
+					"pivot": [-6, 15, 1],
+					"cubes": [
+						{"origin": [-7, 13, -15], "size": [1, 1, 35], "uv": [0, 0]},
+						{"origin": [-7, 12, -18], "size": [1, 3, 3], "uv": [14, 0]},
+						{"origin": [-6.5, 9, -26], "size": [0, 6, 13], "uv": [0, 0]},
+						{"origin": [-6.5, 14, 16], "size": [0, 2, 6], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "leftArm",
+					"parent": "body",
+					"pivot": [5, 22, 0],
+					"mirror": true
+				},
+				{
+					"name": "rightLeg",
+					"parent": "body",
+					"pivot": [-1.9, 12, 0]
+				},
+				{
+					"name": "leftLeg",
+					"parent": "body",
+					"pivot": [1.9, 12, 0],
+					"mirror": true
+				}
+			]
+		}
+	]
+}

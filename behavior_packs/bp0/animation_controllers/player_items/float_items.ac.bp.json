@@ -1,0 +1,59 @@
+{
+	"format_version": "1.8.0",
+	"animation_controllers": {
+		"controller.animation.float_item.contact.medusa_spear": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"in_contact": "query.is_sheared"
+						}
+					]
+				},
+				"in_contact": {
+					"on_entry": [
+						"/execute @a ~ ~ ~ structure load medusa_spear ~ ~ ~",
+						"/playsound misc.checkpoint @a"
+					]
+				}
+			}
+		},
+		"controller.animation.float_item.contact.sword": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"in_contact": "query.is_sheared"
+						}
+					]
+				},
+				"in_contact": {
+					"on_entry": [
+						"/give @a greek:sword",
+						"/playsound misc.checkpoint @a"
+					]
+				}
+			}
+		},
+		"controller.animation.float_item.contact.trident": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"in_contact": "query.is_sheared"
+						}
+					]
+				},
+				"in_contact": {
+					"on_entry": [
+						"/execute @a ~ ~ ~ structure load trident ~ ~ ~",
+						"/playsound misc.checkpoint @a"
+					]
+				}
+			}
+		}
+	}
+}

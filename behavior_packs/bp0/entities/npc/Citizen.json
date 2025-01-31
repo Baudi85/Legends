@@ -1,0 +1,180 @@
+{
+	"format_version": "1.18.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "greek:citizen",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"talk": "controller.animation.citizen.talk"
+			},
+			"scripts": {
+				"animate": [
+					"talk"
+				]
+			}
+		},
+		"component_groups": {
+		    "cg:die": {"minecraft:instant_despawn": {}},
+		    "cg:variant0": {"minecraft:variant": {"value": 0}},
+		    "cg:variant1": {"minecraft:variant": {"value": 1}},
+		    "cg:variant2": {"minecraft:variant": {"value": 2}},
+		    "cg:variant3": {"minecraft:variant": {"value": 3}},
+			"cg:male": {},
+			"cg:female": {"minecraft:is_sheared": {}},
+
+			"cg:cooldown": {
+				"minecraft:timer":{"looping": false, "time": 60, "time_down_event": {"event": "evt:get_ready","target": "self"}}
+			},
+			"cg:talking": {"minecraft:is_stunned": {}},
+			"cg:ready": {
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"event": "evt:start_talking",
+								"target": "self"
+							},
+							"swing": true,
+							"use_item": false
+						}
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:behavior.avoid_block": {
+				"tick_interval": 1,
+				"search_range": 4,
+				"search_height": 10,
+				"target_selection_method": "nearest",
+				"target_blocks": ["minecraft:water"]
+			},
+			"minecraft:behavior.avoid_mob_type": {
+				"max_dist": 4,
+				"max_flee": 9,
+				"walk_speed_multiplier": 1.2,
+				"sprint_speed_multiplier": 1.2,
+				"probability_per_strength": 0.1,
+				"ignore_visibility": false,
+				"priority": 0,
+				"entity_types": [
+					{
+						"filters": {
+							"all_of": [
+								{ "test" :  "is_family", "subject" : "other", "value" :  "npc"}
+							]
+						},
+						"max_dist": 5
+					}
+				]
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+				  "max_optimized_distance": 80.0,
+				  "max_dropped_ticks": 10,
+				  "use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:behavior.float": {
+				"priority": 1
+			},
+		    "minecraft:collision_box":{"height": 1.9, "width": 0.6},
+		    "minecraft:physics": {"has_gravity": true},
+		    "minecraft:type_family": {"family": ["greek, npc"]},
+		    "minecraft:damage_sensor": {
+		        "triggers": {
+		            "cause": "all", "deals_damage": false
+		        }
+		    },
+		    "minecraft:nameable": {},
+		    "minecraft:movement": {"value": 0.25},
+			"minecraft:can_climb": {},
+			"minecraft:jump.static": {
+				"jump_power": 0.5
+			},
+		    "minecraft:movement.basic": {},
+		    "minecraft:navigation.walk":{
+				"avoid_damage_blocks": true,
+				"avoid_portals": true,
+				"avoid_sun": false,
+				"avoid_water": true,
+				"can_breach": false,
+				"can_break_doors": false,
+				"can_jump": true,
+				"can_open_doors": true,
+				"can_open_iron_doors": false,
+				"can_pass_doors": true,
+				"can_path_from_air": false,
+				"can_path_over_lava": false,
+				"can_path_over_water": true,
+				"can_sink": false,
+				"can_swim": true,
+				"can_walk": true,
+				"can_walk_in_lava": false,
+				"is_amphibious": true
+			},
+			"minecraft:buoyant": {
+				"base_buoyancy": 0,
+				"apply_gravity": true,
+				"big_wave_probability": 0.03,
+				"big_wave_speed": 10,
+				"drag_down_on_buoyancy_removed": 0,
+				"liquid_blocks": ["water"],
+				"simulate_waves": true
+			},
+		    "minecraft:behavior.look_at_player": {"look_distance": 8, "priority": 7, "probability": 0.30},
+		    "minecraft:behavior.random_stroll": {
+				"priority": 1
+			},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"randomize": [
+					{
+						"weight": 5,
+						"add": {"component_groups": ["cg:variant0", "cg:male", "cg:ready"]}
+					},
+					{
+						"weight": 5,
+						"add": {"component_groups": ["cg:variant1", "cg:male", "cg:ready"]}
+					},
+					{
+						"weight": 5,
+						"add": {"component_groups": ["cg:variant2", "cg:male", "cg:ready"]}
+					},
+					{
+						"weight": 5,
+						"add": {"component_groups": ["cg:variant3", "cg:male", "cg:ready"]}
+					},
+					{
+						"weight": 5,
+						"add": {"component_groups": ["cg:variant0", "cg:female", "cg:ready"]}
+					},
+					{
+						"weight": 5,
+						"add": {"component_groups": ["cg:variant1", "cg:female", "cg:ready"]}
+					},
+					{
+						"weight": 5,
+						"add": {"component_groups": ["cg:variant2", "cg:female", "cg:ready"]}
+					},
+					{
+						"weight": 5,
+						"add": {"component_groups": ["cg:variant3", "cg:female", "cg:ready"]}
+					}
+				]
+			},
+		    "evt:die": {"add": {"component_groups": ["cg:die"]}},
+			"evt:timer": {"add": {"component_groups": ["cg:talking"]}, "remove": {"component_groups": ["cg:cooldown"]}},
+			"evt:start_talking": {"add": {"component_groups": ["cg:talking"]}, "remove": {"component_groups": ["cg:ready"]}},
+			"evt:start_cooldown": {"add": {"component_groups": ["cg:cooldown"]}, "remove": {"component_groups": ["cg:talking"]}},
+			"evt:get_ready": {"add": {"component_groups": ["cg:ready"]}, "remove": {"component_groups": ["cg:cooldown"]}}
+		}
+	}
+}

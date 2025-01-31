@@ -1,0 +1,140 @@
+{
+    "pools": [
+        // bricks
+        {
+            "entries": [
+                {
+                    "name":"minecraft:brick",
+                    "type": "item",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 4
+                            }
+                        }
+                    ]
+                }               
+            ],
+            "rolls": 1
+        },
+        // logs
+        {
+            "entries": [
+                {
+                    "name":"minecraft:log",
+                    "type": "item"
+                }                 
+            ],
+            "rolls": 1
+        },
+        // diamond
+        {
+            "entries":[
+                {
+                    "name":"minecraft:log",
+                    "type": "item",
+                    "weight": 9
+                },
+                {
+                    "name":"minecraft:diamond",
+                    "type": "item",
+                    "weight": 1 
+                }
+            ],
+            "rolls":1
+        },
+        // coins
+        {
+            "entries":[
+                {
+                    "name":"minecraft:log",
+                    "type": "item",
+                    "weight": 9
+                },
+                {
+                    "name":"minecraft:emerald",
+                    "type": "item",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ],
+                    "weight": 1 
+                }
+            ],
+            "rolls":1
+        },
+        // gapple
+        {
+            "entries":[
+                {
+                    "name":"minecraft:log",
+                    "type": "item",
+                    "weight": 8
+                },
+                {
+                    "name":"minecraft:golden_apple",
+                    "type": "item",
+                    "weight": 2
+                }
+            ],
+            "rolls":1
+        },
+        // arrows
+        {
+            "entries":[
+                {
+                    "name":"minecraft:brick",
+                    "type": "item",
+                    "weight": 1
+                },
+                {
+                    "name":"minecraft:arrow",
+                    "type": "item",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 3
+                            }
+                        }
+                    ],
+                    "weight": 1 
+                }
+            ],
+            "rolls":1
+        },
+        // pork
+        {
+            "entries":[
+                {
+                    "name":"minecraft:brick",
+                    "type": "item",
+                    "weight": 2
+                },
+                {
+                    "name":"minecraft:cooked_porkchop",
+                    "type": "item",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 5
+                            }
+                        }
+                    ],
+                    "weight": 8 
+                }
+            ],
+            "rolls":1
+        }
+    ]
+}

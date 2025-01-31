@@ -1,0 +1,27 @@
+{
+	"resource_pack_name": "vanilla",
+	"texture_data": {
+		"spawn_egg_boat": {
+			"textures": "textures/spawn_items/boat_icon.png"
+		},
+		"spawn_egg_dray": {
+			"textures": "textures/spawn_items/dray_icon.png"
+		},
+		"item_texture_weapons_medusa_spear": {
+			"textures": "textures/items/weapons/item_weapons_medusa_spear.png"
+		},
+		"item_texture_weapons_Sword": {
+			"textures": "textures/items/weapons/item_weapons_Sword.png"
+		},
+		"item_texture_Questbook": {
+			"textures": "textures/items/item_Questbook.png"
+		},
+		"item_texture_spawn_boat": {
+			"textures": "textures/items/item_spawn_boat.png"
+		},
+		"item_texture_spawn_carriage": {
+			"textures": "textures/items/item_spawn_carriage.png"
+		}
+	},
+	"texture_name": "atlas.items"
+}

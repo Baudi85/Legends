@@ -1,0 +1,84 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.medusa_rock",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "angle1",
+					"parent": "root",
+					"pivot": [-3, 0, -4],
+					"rotation": [-29.9104, -2.40212, 35.61489]
+				},
+				{
+					"name": "rock1",
+					"parent": "angle1",
+					"pivot": [-3, 0, -4],
+					"cubes": [
+						{"origin": [-6, -4, -7], "size": [6, 13, 6], "uv": [0, 0]},
+						{"origin": [-4, -4, -8], "size": [4, 8, 1], "uv": [36, 10]},
+						{"origin": [-8, -5, -5], "size": [2, 9, 4], "uv": [20, 24]},
+						{"origin": [-6, 9, -7], "size": [4, 4, 4], "uv": [0, 30]}
+					]
+				},
+				{
+					"name": "angle2",
+					"parent": "root",
+					"pivot": [7, -2, 5],
+					"rotation": [164.55621, 28.30881, 132.56444]
+				},
+				{
+					"name": "rock2",
+					"parent": "angle2",
+					"pivot": [7, -2, 5],
+					"cubes": [
+						{"origin": [4, -2, 2], "size": [6, 5, 6], "uv": [18, 13]},
+						{"origin": [2, -5, 4], "size": [2, 7, 4], "uv": [32, 24]},
+						{"origin": [4, 3, 2], "size": [4, 6, 4], "uv": [24, 0]}
+					]
+				},
+				{
+					"name": "angle3",
+					"parent": "root",
+					"pivot": [-4, -1, 4],
+					"rotation": [85.38818, 68.74742, 116.73089]
+				},
+				{
+					"name": "rock3",
+					"parent": "angle3",
+					"pivot": [-4, -1, 4],
+					"cubes": [
+						{"origin": [-7, -4, 1], "size": [5, 6, 5], "uv": [0, 19]},
+						{"origin": [-8, -4, 3], "size": [1, 4, 3], "uv": [13, 35]},
+						{"origin": [-7, 2, 1], "size": [4, 3, 3], "uv": [29, 35]}
+					]
+				},
+				{
+					"name": "angle4",
+					"parent": "root",
+					"pivot": [5, -1, -4],
+					"rotation": [-146.06181, -22.91496, 119.73505]
+				},
+				{
+					"name": "rock4",
+					"parent": "angle4",
+					"pivot": [5, -1, -4],
+					"cubes": [
+						{"origin": [2, -4, -7], "size": [5, 6, 5], "uv": [0, 19]}
+					]
+				}
+			]
+		}
+	]
+}

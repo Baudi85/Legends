@@ -1,0 +1,31 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "misc:way_marker",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entities/empty"
+      },
+      "geometry": {
+        "default": "geometry.empty"
+      },
+      "render_controllers": [ "controller.render.onetexture" ],
+      "particle_effects": {
+        "particle_loop": "misc:way_marker"
+      },
+      "animation_controllers": [
+        {"general": "controller.animation.way_marker"}
+      ],
+      "animations": {
+        "particle": "animation.particle.loop"
+      },
+      "spawn_egg": {
+        "base_color": "#e3feff",
+        "overlay_color": "#faffff"
+      }
+    }
+  }
+} 

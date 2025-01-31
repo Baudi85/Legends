@@ -1,0 +1,30 @@
+{
+	"format_version": "1.8.0",
+	"animation_controllers": {
+		"controller.animation.player.use_item.weapons.sword": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"item_equipped": "query.get_equipped_item_name =='sword'"
+						}
+					]
+				},
+				"item_equipped": {
+					"on_entry": [
+						"@s evt:equip_sword"
+					],
+					"on_exit": [
+						"@s evt:unequip_sword"
+					],
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name !='sword'"
+						}
+					]
+				}
+			}
+		}
+	}
+}

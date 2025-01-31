@@ -1,0 +1,168 @@
+{
+    "format_version":"1.14.0",
+    "sound_definitions":{    
+        "greek.music.idle": {
+            "category": "music",
+            "sounds": [
+                {
+                    "name": "sounds/greek/music/idle",
+                    "stream": false,
+                    "volume": 0.5
+                }
+            ]
+        },
+        "greek.music.fight.hydra" : {
+            "category": "music",
+            "sounds" : [
+                {
+                    "name": "sounds/greek/music/hydra",
+                    "stream": false,
+                    "volume": 0.6
+                }
+            ]
+        },
+        "greek.music.fight.medusa" : {
+            "category": "music",
+            "sounds" : [
+                {
+                    "name": "sounds/greek/music/medusa",
+                    "stream": false,
+                    "volume": 0.6
+                }
+            ]
+        },
+
+
+
+        "hydra.ambient": {
+            "category": "ambient",
+            "sounds": [
+                "sounds/greek/hydra/ambient1",
+                "sounds/greek/hydra/ambient2",
+                "sounds/greek/hydra/ambient3",
+                "sounds/greek/hydra/ambient4"
+            ]
+        },
+        "hydra.hurt": {
+            "sounds": [
+                "sounds/greek/hydra/hurt1",
+                "sounds/greek/hydra/hurt"
+            ]
+        },
+        "hydra.attack": {
+            "sounds": [
+                "sounds/greek/hydra/attack"
+            ]
+        },
+        "hydra.defeated": {
+            "category": "ui",
+            "sounds": [
+                "sounds/greek/hydra/defeated"
+            ]
+        },
+        "hydra.loop": {
+            "category": "ui",
+            "sounds": [
+                {
+                    "name": "sounds/elytra/elytra_loop",
+                    "volume": 0.5
+                }
+            ]
+        },
+        "hydra.shoot": {
+            "sounds": [
+                "sounds/greek/hydra/shoot"
+            ]
+        },
+
+        "medusa.ambient": {
+            "category": "ambient",
+            "sounds": [
+                "sounds/greek/medusa/idle1",
+                "sounds/greek/medusa/idle2",
+                "sounds/greek/medusa/idle3",
+                "sounds/greek/medusa/idle4"
+            ]
+        },
+        "medusa.attack": {
+            "sounds": [
+                "sounds/greek/medusa/attack1",
+                "sounds/greek/medusa/attack2",
+                "sounds/greek/medusa/attack3",
+                "sounds/greek/medusa/attack4",
+                "sounds/greek/medusa/attack5"
+            ]
+        },
+        "medusa.hurt": {
+            "sounds": [
+                "sounds/greek/medusa/hit1",
+                "sounds/greek/medusa/hit2",
+                "sounds/greek/medusa/hit3",
+                "sounds/greek/medusa/hit4",
+                "sounds/greek/medusa/hit5"
+            ]
+        }, 
+        "medusa.stun": {
+            "sounds": [
+                "sounds/greek/medusa/stun1",
+                "sounds/greek/medusa/stun2"
+            ]
+        },
+        "medusa.spawn": {
+            "sounds": [
+                "sounds/greek/medusa/spawn"
+            ]
+        },
+        "medusa.rock": {
+            "sounds": [
+                "sounds/greek/medusa/rock"
+            ]
+        },
+
+        "misc.achievement": {
+            "category": "ui",
+            "sounds": [
+                "sounds/greek/misc/achievement"
+            ]
+        },
+        "misc.checkpoint": {
+            "category": "ui",
+            "sounds": [
+                "sounds/greek/misc/checkpoint"
+            ]
+        },
+        "misc.sacrificial_bowl": {
+            "category": "ui",
+            "sounds": [
+                "sounds/greek/misc/sacrificial_bowl"
+            ]
+        },
+        "misc.fire": {
+            "category": "ambient",
+            "sounds": [
+                "sounds/greek/misc/fire"
+            ]
+        },
+        "misc.vase_break": {
+            "category": "ui",
+            "sounds": [
+                {
+                    "name": "sounds/greek/misc/vase_break",
+                    "pitch": 0.4
+                }
+            ]
+        },
+        "greek.carriage.walk": {
+            "sounds": [
+                "sounds/greek/carriage/walk1",
+                "sounds/greek/carriage/walk2",
+                "sounds/greek/carriage/walk3",
+                "sounds/greek/carriage/walk4",
+                "sounds/greek/carriage/walk5",
+                "sounds/greek/carriage/walk6",
+                "sounds/greek/carriage/walk7",
+                "sounds/greek/carriage/walk8"
+            ]
+        }
+    }
+}

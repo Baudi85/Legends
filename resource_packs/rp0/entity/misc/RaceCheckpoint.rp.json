@@ -1,0 +1,31 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "greek:checkpoint",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/misc/RaceCheckpoint_default"
+			},
+			"geometry": {
+				"default": "geometry.checkpoint"
+			},
+			"render_controllers": ["controller.render.misc.RaceCheckpoint"],
+
+			"animations": {
+				"anim_0": "animation.track_ring.deflate",
+				"idle": "animation.track_ring.rotate"
+			},
+			"animation_controllers" :[
+				{"activated": "controller.animation.misc.RaceCheckpoint.activated"},
+				{"idle_controller": "controller.animation.misc.RaceCheckpoint.idle"}
+			],
+			"spawn_egg": {
+				"base_color": "#55007f",
+				"overlay_color": "#00ffff"
+			}
+		}
+	}
+}

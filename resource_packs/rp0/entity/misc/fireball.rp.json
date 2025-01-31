@@ -1,0 +1,29 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "greek:fireball",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/misc/fireball"
+      },
+      "geometry": {
+        "default": "geometry.hydra_projectile"
+      },
+      "animations": {
+        "idle": "animation.hydra_projectile.spin",
+        "particle": "animation.particle.loop"
+      },
+      "animation_controllers": [
+        {"idle_controller": "controller.animation.idle"},
+        {"particle": "controller.animation.way_marker"}
+      ],
+      "particle_effects": {
+        "particle_loop": "greek:hydra_fireball"
+      },
+      "render_controllers": [ "controller.render.onetexture" ]
+    }
+  }
+}

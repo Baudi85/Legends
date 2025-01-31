@@ -1,0 +1,70 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+      "description": {
+          "identifier": "npc:shipbuilder",
+          "is_spawnable": false,
+          "is_summonable": true,
+          "is_experimental": false
+      },
+      "component_groups": {
+        "cg:die": {"minecraft:instant_despawn": {}}      
+      },
+      "components": {
+        "minecraft:trade_table": {
+          "new_screen" : true,
+          "display_name": "entity.npc:shipbuilder.name",
+          "table": "trading/shipbuilder.json"
+        },
+          "minecraft:breathable": {
+              "totalSupply": 15,
+              "suffocateTime": 0
+          },
+          "minecraft:health": {
+              "value": 2000,
+              "max": 2000
+          },
+          "minecraft:nameable": {},
+          "minecraft:movement.basic": {},
+          "minecraft:behavior.look_at_player": {
+              "priority": 5,
+              "look_distance": 8,
+              "probability": 0.2
+          },
+          "minecraft:jump.static": {},
+          "minecraft:can_climb": {},
+          "minecraft:behavior.float": {
+              "priority": 0
+          },
+          "minecraft:damage_sensor": {
+            "triggers": [
+                {
+                    "cause": "all",
+                    "deals_damage": false
+                }
+            ]
+          },
+          "minecraft:pushable": {
+              "is_pushable": false,
+              "is_pushable_by_piston": true
+          },
+          "minecraft:behavior.random_look_around": {
+              "priority": 7
+          },
+          "minecraft:collision_box": {
+              "width": 0.5,
+              "height": 1.5
+          },
+          "minecraft:behavior.trade_with_player": {
+              "priority": 2
+          },
+          "minecraft:behavior.look_at_trading_player": {
+              "priority": 7
+          },
+          "minecraft:physics": {}
+      },
+      "events": {
+        "evt:die": {"add": {"component_groups": ["cg:die"]}}
+      }
+  }
+}

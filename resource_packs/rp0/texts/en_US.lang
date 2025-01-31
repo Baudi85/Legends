@@ -1,0 +1,71 @@
+pack.name=Ancient Legends
+pack.description=Mystical creatures have taken over the ancient realm. Only a hero like you will be able to free it. Fight the most dangerous legendary creatures. Tame the Hydra and collect long-forgotten artifacts and weapons. Gain the power of a god.
+
+## Entity greek:citizen created by MinecraftMaker Entity Creator
+entity.greek:citizen.name=Citizen
+item.spawn_egg.entity.greek:citizen.name=Spawn Citizen
+
+## Entity greek:soldier created by MinecraftMaker Entity Creator
+entity.greek:soldier.name=Soldier
+item.spawn_egg.entity.greek:soldier.name=Spawn Soldier
+
+## Item greek:medusa_spear created by MinecraftMaker Item Creator
+item.greek:medusa_spear.name=§3Medusa's Spear
+
+## Item greek:sword created by MinecraftMaker Item Creator
+item.greek:sword.name=§6Ancient Sword
+
+## Entity greek:checkpoint created by MinecraftMaker Entity Creator
+entity.greek:checkpoint.name=Race Checkpoint
+item.spawn_egg.entity.greek:checkpoint.name=Spawn Race Checkpoint
+
+## Entity greek:camp created by MinecraftMaker Entity Creator
+entity.greek:camp.name=Soldier Camp
+item.spawn_egg.entity.greek:camp.name=Spawn Soldier Camp
+
+## Item greek:quest created by MinecraftMaker Item Creator
+item.greek:quest.name=§3Questbook
+
+## Entity greek:stone_soldier created by MinecraftMaker Entity Creator
+entity.greek:stone_soldier.name=Stone Soldier
+item.spawn_egg.entity.greek:stone_soldier.name=Spawn Stone Soldier
+
+## npcs
+entity.npc:shipbuilder.name=Shipbuilder
+entity.npc:arena.name=Arena Chief
+entity.npc:seher.name=Elder
+
+## hydra
+%entity.greek:hydra.name=Ancient Hydra
+entity.greek:hydra.name=Ancient Hydra
+item.spawn_egg.entity.greek:hydra.name=Spawn Hydra
+action.hint.exit.greek:hydra=Press sneak to dismount
+
+## medusa
+entity.greek:medusa.name=Ancient Medusa
+item.spawn_egg.entity.greek:medusa.name=Spawn Medusa
+
+## horse carriage
+entity.greek:horse_dray.name=Horse Drawn Carriage
+item.spawn_egg.entity.greek:horse_dray.name=Spawn Horse Drawn Carriage
+action.hint.exit.greek:horse_dray=Press sneak to dismount
+
+## boat
+entity.greek:boat.name=Boat
+item.spawn_egg.entity.greek:boat.name=Spawn Boat
+action.hint.exit.greek:boat=Press sneak to dismount
+
+## interactions
+action.interact.bowl=Interact with a Coin to earn the god's blessing
+
+## emerald
+item.emerald.name=§6Coin
+
+## nether  star
+item.netherStar.name=§3Hydra Soul Shard
+
+## Item greek:spawn_boat created by MinecraftMaker Item Creator
+item.greek:spawn_boat.name=Spawn Boat
+
+## Item greek:spawn_carriage created by MinecraftMaker Item Creator
+item.greek:spawn_carriage.name=Spawn Horse Drawn Carriage

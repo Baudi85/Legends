@@ -1,0 +1,28 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.generic.soldier_camp": {
+            "initial_state": "inactive",
+            "states": {
+                "inactive": {
+                    "transitions": [
+                        {"active": "query.variant == 1"}
+                    ]
+                },
+                "active": {
+                    "on_entry": ["/function camp/activate"],
+                    "transitions": [
+                        {"inactive": "query.variant == 2"},
+                        {"time_out": "query.variant == 3"}
+                    ]
+                },
+                "time_out":{
+                    "on_entry": ["/function camp/reset"],
+                    "transitions": [
+                        {"inactive": "query.variant == 0"}
+                    ]
+                }
+            }
+        }
+    }
+}

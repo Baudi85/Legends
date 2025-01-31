@@ -1,0 +1,23 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.pot_loot": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [ 
+                        {"drop": "query.mark_variant==1"}
+                    ]
+                },
+                "drop": {
+                    "on_entry": [ 
+                        "/summon misc:pot_loot ~ ~ ~"
+                    ],
+                    "transitions": [ 
+                        {"default": "query.mark_variant==0"}
+                    ]
+                }
+            }
+        }
+    }
+}

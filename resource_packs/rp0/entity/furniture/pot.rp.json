@@ -1,0 +1,27 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "greek:pot",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "visible": "textures/entities/pot_greek",
+        "invisible":"textures/entities/pot_empty"
+      },
+      "geometry": {
+        "default": "geometry.pot"
+      },
+      "render_controllers": [ "controller.render.pot" ],
+      "animation_controllers": [{"break":"controller.animation.pot"}],
+      "animations": {
+        "break": "animation.pot.break"
+      },
+      "spawn_egg": {
+        "base_color": "#e3feff",
+        "overlay_color": "#faffff"
+      }
+    }
+  }
+} 

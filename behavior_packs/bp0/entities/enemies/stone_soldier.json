@@ -1,0 +1,63 @@
+{
+	"format_version": "1.18.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "greek:stone_soldier",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+		    "cg:die": {"minecraft:instant_despawn": {}}
+		},
+		"components": {
+		    "minecraft:collision_box":{"height": 2.0, "width": 1.0},
+		    "minecraft:physics": {"has_gravity": true},
+		    "minecraft:type_family": {"family": ["greek", "mob", "monster"]},
+		    "minecraft:knockback_resistance": {"value": 0.9},
+		    "minecraft:health": {"value": 15, "max": 15},
+		    "minecraft:tick_world": {"radius": 2},
+		    "minecraft:attack": {"damage": 2, "effect_duration": 2, "effect_name": "slowness"},
+		    "minecraft:experience_reward": {"on_death": "Math.Random(3, 5)"},
+		    "minecraft:movement": {"value": 0.3},
+		    "minecraft:movement.basic": {},
+		    "minecraft:navigation.walk": {
+		        "avoid_damage_blocks": true,
+		        "avoid_water": false,
+		        "avoid_sun": false,
+		        "can_path_over_water": false,
+		        "can_path_from_air": false,
+		        "can_sink": true,
+		        "can_swim": false,
+		        "can_walk": true
+		    },
+		    "minecraft:behavior.look_at_player": {"look_distance": 8, "priority": 5, "probability": 0.10},
+		    "minecraft:behavior.melee_attack": {"priority": 1, "speed_multiplier": 1, "track_target": true},
+		    "minecraft:behavior.nearest_attackable_target":{
+		        "attack_interval": 0,
+		        "entity_types": [
+		            {
+		                "filters": {
+		                    "all_of":[
+		                        {
+		                            "test": "is_family",
+		                            "subject": "other",
+		                            "value": "player"
+		                        }
+		                    ]
+		                },
+		                "max_dist": 16
+		            }
+		        ],
+		        "must_reach": true,
+		        "must_see": true,
+		        "must_see_forget_duration": 10,
+		        "reselect_targets": true,
+		        "within_radius": 0.0
+		    }
+		},
+		"events": {
+		    "evt:die": {"add": {"component_groups": ["cg:die"]}}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "float_item:trident",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/weapons/greek_trident"
+      },
+      "geometry": {
+        "default": "geometry.trident_item"
+      },
+      "render_controllers": [ "controller.render.onetexture" ],
+      "animations": {
+        "idle":"animation.items.rotate",
+        "idle_particle": "animation.particle.loop_inf"
+      },
+      "particle_effects": {
+        "particle_loop": "greek:float_trident"
+      },
+      "animation_controllers":[
+        {"general":"controller.animation.idle"},
+        {"particles" : "controller.animation.particles.idle"}
+      ]
+    }
+  }
+} 

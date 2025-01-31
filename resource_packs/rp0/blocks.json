@@ -1,0 +1,14 @@
+{  
+   "format_version": [ 1, 1, 0 ],   
+   "hardened_clay" : {
+      "isotropic" : false,
+      "sound" : "stone",
+      "textures" : "hardened_clay",
+      "brightness_gamma": 10000
+   },
+   "stained_hardened_clay" : {
+      "isotropic" : false,
+      "sound" : "stone",
+      "textures" : "stained_clay"
+   }
+}

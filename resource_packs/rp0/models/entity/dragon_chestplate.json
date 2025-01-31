@@ -1,0 +1,73 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.pixelbiester.dragon_chestplate2",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "waist",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{"origin": [-4, 12, -2], "size": [8, 12, 4], "inflate": 0.4, "uv": [33, 16]}
+					]
+				},
+				{
+					"name": "rightArm",
+					"parent": "body",
+					"pivot": [-5, 22, 0],
+					"cubes": [
+						{"origin": [-8, 12, -2], "size": [4, 12, 4], "inflate": 0.5, "uv": [19, 46], "mirror": true}
+					]
+				},
+				{
+					"name": "rightItem",
+					"parent": "rightArm",
+					"pivot": [-6, 15, 1]
+				},
+				{
+					"name": "bone3",
+					"parent": "rightArm",
+					"pivot": [-8.3, 24.26667, 0],
+					"rotation": [0, 0, 10],
+					"cubes": [
+						{"origin": [-8.8, 21.6, -3], "size": [5, 4, 6], "uv": [0, 37], "mirror": true},
+						{"origin": [-9.8, 25.6, -3], "size": [1, 0, 6], "uv": [45, 0], "mirror": true},
+						{"origin": [-9.8, 23.6, -3], "size": [1, 0, 6], "uv": [37, 9], "mirror": true}
+					]
+				},
+				{
+					"name": "leftArm",
+					"parent": "body",
+					"pivot": [6.16667, 21.66667, 0],
+					"mirror": true,
+					"cubes": [
+						{"origin": [4, 12, -2], "size": [4, 12, 4], "inflate": 0.5, "uv": [19, 46], "mirror": false}
+					]
+				},
+				{
+					"name": "bone",
+					"parent": "leftArm",
+					"pivot": [8.3, 24.26667, 0],
+					"rotation": [0, 0, -10],
+					"cubes": [
+						{"origin": [3.8, 21.6, -3], "size": [5, 4, 6], "uv": [0, 37]},
+						{"origin": [8.8, 25.6, -3], "size": [1, 0, 6], "uv": [45, 0]},
+						{"origin": [8.8, 23.6, -3], "size": [1, 0, 6], "uv": [37, 9]}
+					]
+				}
+			]
+		}
+	]
+}

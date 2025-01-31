@@ -1,0 +1,68 @@
+{
+  "format_version": "1.14.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "greek:boat",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "cg:var_default":{
+        "minecraft:variant":{"value":0},
+        "minecraft:rideable": {
+          "seat_count": 2,
+          "family_types": ["player"],
+          "seats": [
+            {
+              "position": [0, 0.6, -1.6],           
+              "min-rider_count": 0,
+              "max-rider_count": 0
+            },
+            {
+              "position": [0, 0.6, 0],           
+              "min-rider_count": 2,
+              "max-rider_count": 2
+            }
+          ]
+        },
+        "minecraft:input_ground_controlled": {},
+        "minecraft:pushable": {
+          "is_pushable": true,
+          "is_pushable_by_piston": true
+        }
+      },
+      "cg:var_immobile": {
+        "minecraft:variant":{"value":1},
+        "minecraft:pushable": {
+          "is_pushable": false,
+          "is_pushable_by_piston": false
+        }
+      }
+    },
+    "components": {
+      "minecraft:loot": {"table": "loot_tables/boat.loot.json"},
+      "minecraft:behavior.rise_to_liquid_level": {
+        "priority": 0,
+        "liquid_y_offset": -0.3,
+        "rise_delta": 0.05,
+        "sink_delta": 0.05
+      },
+      "minecraft:underwater_movement": {"value": 0.1},
+      "minecraft:navigation.walk": {"can_sink": false},
+      "minecraft:health": {"value": 10,"max": 10},
+      "minecraft:movement": {"value": 0.05},
+      "minecraft:movement.basic": {},
+      "minecraft:collision_box": {"width": 1,"height": 1},
+      "minecraft:physics": {}
+    },  
+    "events": {
+      "minecraft:entity_spawned": {"add": { "component_groups": [ "cg:var_default" ]}},
+      "evt:immobile": {
+        "add": {
+          "component_groups": ["cg:var_immobile"]
+        }
+      }
+    }
+  }
+}

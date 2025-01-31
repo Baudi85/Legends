@@ -1,0 +1,43 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "greek:hydra",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/hydra",
+        "saddled": "textures/entity/hydrasaddle"
+      },
+      "animations": {
+        "fly": "animation.hydra.fly",
+        "fly_sound": "animation.hydra.fly_sound",
+        "walk": "animation.hydra.walk",
+        "idle": "animation.hydra.idle",
+        "idlefly": "animation.hydra.idlefly",
+        "defeated": "animation.hydra.death",
+
+        "attack": "animation.hydra.attack",
+        "flyattack": "animation.hydra.flyattack"
+      },
+      "geometry": {
+        "default": "geometry.greek.hydra"
+      },
+      "animation_controllers": [
+        {"movement": "controller.animation.hydra.movement"},
+        {"attacking": "controller.animation.hydra.attacking"}
+      ],
+      "render_controllers": [
+        "controller.render.greek.hydra"
+      ],
+      "sound_effects": {
+        "flap": "mob.enderdragon.flap"
+      },
+      "spawn_egg": {
+        "base_color": "#373EAD",
+        "overlay_color": "#AC37AD"
+      }
+    }
+  }
+}

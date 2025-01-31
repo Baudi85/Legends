@@ -1,0 +1,95 @@
+{
+	"format_version": "1.18.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "greek:checkpoint",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"quest_race_controller": "controller.animation.generic.RaceCheckpoint"
+			},
+			"scripts": {
+				"animate": [
+					"quest_race_controller"
+				]
+			}
+		},
+		"component_groups": {
+		    "cg:die": {"minecraft:instant_despawn": {}},
+			"cg:activated": {
+				"minecraft:is_baby": {},
+				"minecraft:timer": {
+					"time": 5,
+					"looping": true,
+					"time_down_event": {
+						"event": "evt:die",
+						"target": "self"
+					}
+				}
+			},
+
+			"cg:race_0":{"minecraft:variant": {"value": 0}},
+			"cg:race_1":{"minecraft:variant": {"value": 1}},
+			"cg:race_2":{"minecraft:variant": {"value": 2}},
+			"cg:race_3":{"minecraft:variant": {"value": 3}},
+			"cg:race_4":{"minecraft:variant": {"value": 4}},
+			"cg:race_5":{"minecraft:variant": {"value": 5}},
+			"cg:race_6":{"minecraft:variant": {"value": 6}},
+			"cg:race_7":{"minecraft:variant": {"value": 7}},
+			"cg:race_8":{"minecraft:variant": {"value": 8}},
+			"cg:race_9":{"minecraft:variant": {"value": 9}},
+			"cg:race_10":{"minecraft:variant": {"value": 10}},
+			"cg:race_11":{"minecraft:variant": {"value": 11}},
+			"cg:race_12":{"minecraft:variant": {"value": 12}}
+			
+
+		},
+		"components": {
+		    "minecraft:scale": {"value": 1.0},
+		    "minecraft:physics": {"has_gravity": true},
+		    "minecraft:type_family": {"family": ["greek", "misc"]},
+		    "minecraft:damage_sensor": {
+		        "triggers": {
+		            "cause": "all", "deals_damage": false
+		        }
+		    },
+			"minecraft:collision_box": {
+				"height": 0.0,
+				"width": 0.0
+			},
+			"minecraft:entity_sensor": {
+				"maximum_count": -1,
+				"minimum_count": 1,
+				"relative_range": true,
+				"require_all": false,
+				"event_filters":{"test":"is_family", "operator": "==", "value": "race", "subject": "other"},
+				"sensor_range": 5,
+				"event": "evt:activated"
+			},
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": true,
+				"radius": 2
+			}
+		},
+		"events": {
+		    "evt:die": {"add": {"component_groups": ["cg:die"]}},
+			"evt:activated": {"add": {"component_groups": ["cg:activated"]}},
+
+			"evt:race_0": {"add": {"component_groups": ["cg:race_0"]}},
+			"evt:race_1": {"add": {"component_groups": ["cg:race_1"]}},
+			"evt:race_2": {"add": {"component_groups": ["cg:race_2"]}},
+			"evt:race_3": {"add": {"component_groups": ["cg:race_3"]}},
+			"evt:race_4": {"add": {"component_groups": ["cg:race_4"]}},
+			"evt:race_5": {"add": {"component_groups": ["cg:race_5"]}},
+			"evt:race_6": {"add": {"component_groups": ["cg:race_6"]}},
+			"evt:race_7": {"add": {"component_groups": ["cg:race_7"]}},
+			"evt:race_8": {"add": {"component_groups": ["cg:race_8"]}},
+			"evt:race_9": {"add": {"component_groups": ["cg:race_9"]}},
+			"evt:race_10": {"add": {"component_groups": ["cg:race_10"]}},
+			"evt:race_11": {"add": {"component_groups": ["cg:race_11"]}},
+			"evt:race_12": {"add": {"component_groups": ["cg:race_12"]}}
+		}
+	}
+}

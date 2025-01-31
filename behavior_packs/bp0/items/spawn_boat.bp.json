@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:item": {
+		"description": {
+			"identifier": "greek:spawn_boat",
+			"register_to_creative_menu": true
+		},
+		"components": {
+			"minecraft:hand_equipped": false,
+			"minecraft:stacked_by_data": false,
+			"minecraft:food": {
+				"nutrition": 0,
+				"saturation_modifier": "low",
+				"using_converts_to": "",
+				"can_always_eat": true,
+				"effects": [
+					{
+						"name": "regeneration",
+						"chance": 0.0,
+						"duration": 0,
+						"amplifier": 1
+					}
+				]
+			},
+			"minecraft:use_duration": 9999
+		}
+	}
+}

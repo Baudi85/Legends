@@ -1,0 +1,39 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "greek:medusa",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entities/enemies/medusa_em.png",
+        "stun": "textures/entities/enemies/medusa_em_red.png"
+      },
+      "geometry": {
+        "default": "geometry.medusa"
+      },
+      "render_controllers": [ "controller.render.medusa" ],
+      "animation_controllers": [
+        //{"attacks":  "controller.animation.medusa.all_attacks"},
+        {"attacks":  "controller.animation.medusa.stun"},
+        {"special":  "controller.animation.medusa.attack"},
+        
+        {"movement": "controller.animation.medusa.move"}
+      ],
+      "particle_effects": {
+        "stun_init_particle": "medusa:stun_init"
+      },
+      "animations": {
+        "idle": "animation.medusa.idle",
+        "move": "animation.medusa.move",
+        "stun": "animation.medusa.hit",
+        "attack": "animation.medusa.special_hit"
+      },
+      "spawn_egg": {
+        "base_color": "#e3feff",
+        "overlay_color": "#faffff"
+      }
+    }
+  }
+} 

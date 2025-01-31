@@ -1,0 +1,19 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.fire_bowl.texture": {
+            "loop": true,
+            "animation_length": 0.72,
+            "timeline": {
+                "0.0": [ "/event entity @s evt:reset0" ],
+                "0.09": [ "/event entity @s evt:reset1" ],
+                "0.18": [ "/event entity @s evt:reset2" ],
+                "0.27": [ "/event entity @s evt:reset3" ],
+                "0.36": [ "/event entity @s evt:reset4" ],
+                "0.45": [ "/event entity @s evt:reset5" ],
+                "0.54": [ "/event entity @s evt:reset6" ],
+                "0.63": [ "/event entity @s evt:reset7" ]
+            }
+        }
+    }
+}

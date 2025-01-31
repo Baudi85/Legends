@@ -1,0 +1,57 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.bowl.haste": {
+            "loop": true,
+            "animation_length": 0.5,
+            "timeline": {
+                "0.0": [ 
+                    "/execute @s ~ ~ ~ effect @a[r=3] haste 300 1 true"
+                ],
+                "0.1": [ "/execute @s ~ ~ ~ effect @a[r=3] haste 300 1 true" ],
+                "0.2": [ "/execute @s ~ ~ ~ effect @a[r=3] haste 300 1 true" ],
+                "0.3": [ "/execute @s ~ ~ ~ effect @a[r=3] haste 300 1 true" ],
+                "0.4": [ "/execute @s ~ ~ ~ effect @a[r=3] haste 300 1 true" ]
+            }
+        },
+        "animation.bowl.resistance": {
+            "loop": true,
+            "animation_length": 0.5,
+            "timeline": {
+                "0.0": [ 
+                    "/execute @s ~ ~ ~ effect @a[r=3] resistance 300 1 true"
+                ],
+                "0.1": [ "/execute @s ~ ~ ~ effect @a[r=3] resistance 300 1 true" ],
+                "0.2": [ "/execute @s ~ ~ ~ effect @a[r=3] resistance 300 1 true" ],
+                "0.3": [ "/execute @s ~ ~ ~ effect @a[r=3] resistance 300 1 true" ],
+                "0.4": [ "/execute @s ~ ~ ~ effect @a[r=3] resistance 300 1 true" ]
+            }
+        },
+        "animation.bowl.speed": {
+            "loop": true,
+            "animation_length": 0.5,
+            "timeline": {
+                "0.0": [ 
+                    "/execute @s ~ ~ ~ effect @a[r=3] speed 300 1 true"
+                ],
+                "0.1": [ "/execute @s ~ ~ ~ effect @a[r=3] speed 300 1 true" ],
+                "0.2": [ "/execute @s ~ ~ ~ effect @a[r=3] speed 300 1 true" ],
+                "0.3": [ "/execute @s ~ ~ ~ effect @a[r=3] speed 300 1 true" ],
+                "0.4": [ "/execute @s ~ ~ ~ effect @a[r=3] speed 300 1 true" ]
+            }
+        },
+        "animation.bowl.strength": {
+            "loop": true,
+            "animation_length": 0.5,
+            "timeline": {
+                "0.0": [ 
+                    "/execute @s ~ ~ ~ effect @a[r=3] strength 300 1 true"
+                ],
+                "0.1": [ "/execute @s ~ ~ ~ effect @a[r=3] strength 300 1 true" ],
+                "0.2": [ "/execute @s ~ ~ ~ effect @a[r=3] strength 300 1 true" ],
+                "0.3": [ "/execute @s ~ ~ ~ effect @a[r=3] strength 300 1 true" ],
+                "0.4": [ "/execute @s ~ ~ ~ effect @a[r=3] strength 300 1 true" ]
+            }
+        }
+    }
+}

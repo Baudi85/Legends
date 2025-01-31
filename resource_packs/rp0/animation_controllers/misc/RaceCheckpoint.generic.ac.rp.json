@@ -1,0 +1,32 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.misc.RaceCheckpoint.activated": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "2nd_state": "query.is_baby"
+                        }
+                    ]
+                },
+                "2nd_state": {
+                    "animations": [
+                        "anim_0"
+                    ]
+                }
+            }
+        },
+        "controller.animation.misc.RaceCheckpoint.idle": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "animations": [
+                        "idle"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "greek:soldier",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"v0": "textures/npc/Soldier_0",
+				"v1": "textures/npc/Soldier_1",
+				"v2": "textures/npc/Soldier_2",
+				"v3": "textures/npc/Soldier_3"
+			},
+			"geometry": {
+				"default": "geometry.npc_sold"
+			},
+			"render_controllers": ["controller.render.npc.Soldier"],
+
+			"animations": {
+				"move": "animation.npc_sold.walk",
+				"hit": "animation.npc_sold.hit",
+				"idle": "animation.npc_sold.idle"
+			},
+			"animation_controllers" :[
+				{"attack": "controller.animation.npc.Soldier.attack"},
+				{"moving": "controller.animation.move"}
+			],
+			"spawn_egg": {
+				"base_color": "#08d9c4",
+				"overlay_color": "#8765bc"
+			}
+		}
+	}
+}

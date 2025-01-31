@@ -1,0 +1,14 @@
+{
+	"format_version": "1.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "greek:spawn_carriage",
+			"category": "Nature"
+		},
+		"components": {
+			"minecraft:icon": "item_texture_spawn_carriage",
+			"minecraft:render_offsets": "tools",
+			"minecraft:use_animation": "eat"
+		}
+	}
+}

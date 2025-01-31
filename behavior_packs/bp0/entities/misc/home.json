@@ -1,0 +1,36 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "misc:home",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+      "cg:despawn":{
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "height": 0,
+        "width": 0
+      },
+      "minecraft:knockback_resistance": {"value": 1},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:tick_world": {
+        "never_despawn": true,
+        "radius": 2
+      },
+      "minecraft:damage_sensor": {"triggers": [{"cause": "all","deals_damage": false}]}
+    },
+    "events": {
+      "evt:die":{"add": {"component_groups": ["cg:despawn"]}}
+    }
+  }
+}

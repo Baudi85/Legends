@@ -1,0 +1,92 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.generic.RaceCheckpoint": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {"active_0": "query.is_baby && (query.variant == 0)"},
+                        {"active_1": "query.is_baby && (query.variant == 1)"},
+                        {"active_2": "query.is_baby && (query.variant == 2)"},
+                        {"active_3": "query.is_baby && (query.variant == 3)"},
+                        {"active_4": "query.is_baby && (query.variant == 4)"},
+                        {"active_5": "query.is_baby && (query.variant == 5)"},
+                        {"active_6": "query.is_baby && (query.variant == 6)"},
+                        {"active_7": "query.is_baby && (query.variant == 7)"},
+                        {"active_8": "query.is_baby && (query.variant == 8)"},
+                        {"active_9": "query.is_baby && (query.variant == 9)"},
+                        {"active_10": "query.is_baby && (query.variant == 10)"},
+                        {"active_11": "query.is_baby && (query.variant == 11)"},
+                        {"active_12": "query.is_baby && (query.variant == 12)"}
+                    ]
+                },
+                "active_0": {
+                    "on_entry": [ 
+                        "/function quests/quest_3/enter_checkpoint_0" 
+                    ]
+                },
+                "active_1": {
+                    "on_entry": [ 
+                        "/function quests/quest_3/enter_checkpoint_1" 
+                    ]
+                },
+                "active_2": {
+                    "on_entry": [ 
+                        "/function quests/quest_3/enter_checkpoint_2" 
+                    ]
+                },
+                "active_3": {
+                    "on_entry": [ 
+                        "/function quests/quest_3/enter_checkpoint_3" 
+                    ]
+                },
+                "active_4": {
+                    "on_entry": [ 
+                        "/function quests/quest_3/enter_checkpoint_4" 
+                    ]
+                },
+                "active_5": {
+                    "on_entry": [ 
+                        "/function quests/quest_3/enter_checkpoint_5" 
+                    ]
+                },
+                "active_6": {
+                    "on_entry": [ 
+                        "/function quests/quest_3/enter_checkpoint_6" 
+                    ]
+                },
+                "active_7": {
+                    "on_entry": [ 
+                        "/function quests/quest_3/enter_checkpoint_7" 
+                    ]
+                },
+                "active_8": {
+                    "on_entry": [ 
+                        "/function quests/quest_3/enter_checkpoint_8" 
+                    ]
+                },
+                "active_9": {
+                    "on_entry": [ 
+                        "/function quests/quest_3/enter_checkpoint_9" 
+                    ]
+                },
+                "active_10": {
+                    "on_entry": [ 
+                        "/function quests/quest_3/enter_checkpoint_10" 
+                    ]
+                },
+                "active_11": {
+                    "on_entry": [ 
+                        "/function quests/quest_3/enter_checkpoint_11" 
+                    ]
+                },
+                "active_12": {
+                    "on_entry": [ 
+                        "/function quests/quest_3/testfor_outcome" 
+                    ]
+                }
+            }
+        }
+    }
+}

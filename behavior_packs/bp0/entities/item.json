@@ -1,0 +1,31 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:item",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false,
+      "animations": {
+        "item_on_ground": "controller.animation.item_on_ground"
+      },
+      "scripts": {
+        "animate": [
+          "item_on_ground"
+        ]
+      }
+    },
+    "components": {
+      "minecraft:nameable":{},
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "family_types": [
+          "item_model"
+        ],
+        "seats": {
+          "position": [ 0.0, 0.0, 0.0 ]
+        }
+      }
+    }
+  }
+}

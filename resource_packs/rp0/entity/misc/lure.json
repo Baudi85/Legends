@@ -1,0 +1,22 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "misc:lure",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entities/empty"
+      },
+      "geometry": {
+        "default": "geometry.empty"
+      },
+      "render_controllers": [ "controller.render.onetexture" ],
+      "spawn_egg": {
+        "base_color": "#e3feff",
+        "overlay_color": "#faffff"
+      }
+    }
+  }
+} 

@@ -1,0 +1,104 @@
+{
+    "format_version": "1.12.0",
+    "animation_controllers": {
+  
+      "controller.animation.fly": {
+        "initial_state": "init_hydra",
+
+        "states": {
+          "init_hydra":{"transitions": [{"on_ground": "query.variant == 4"}]},
+
+          "on_ground": {
+            "on_entry":["@s evt:move_ground", "/tag @s remove flying"],
+            "transitions": [
+              {"in_air": "!query.is_on_ground && query.variant == 4" }
+            ]
+          },
+          "in_air": {
+            "on_entry":["@s evt:move_air", "/tag @s add flying"],
+            "transitions": [ 
+              {"on_ground": "query.is_on_ground && query.variant == 4" },
+              {"hovering": "query.mark_variant == 1 && query.variant == 4"}
+            ]
+          },
+          "hovering": {
+            "on_entry":["@s evt:move_hover"],
+            "transitions": [ 
+              {"in_air": "query.mark_variant == 0 && query.variant == 4" },
+              {"on_ground": "query.is_on_ground && query.variant == 4"}
+            ]
+          }
+        }
+      },
+
+
+      "controller.animation.attack_fly": {
+        "initial_state": "default",
+
+        "states": {
+          "default": {
+            "on_entry":[],
+            "transitions":[{"riding": "query.is_riding"}]
+          },
+
+          "riding": {
+            "on_entry":[],
+            "transitions": [     
+              { "attack_setup": "query.is_jumping" },
+              {"default": "!query.is_riding"}
+            ]
+          },
+          "attack_setup": {
+            "transitions": [ { "attack": "!query.is_jumping && query.all_animations_finished" }]
+          },
+          "attack": {
+            "on_entry":[
+              "/tag @s add shooting",
+              "/execute @e[family=shooting,r=3] ~ ~ ~ execute @a[r=4,tag=shooting] ~ ~ ~ event entity @s greek:launch_hydra_attack",
+              "/execute @e[family=shooting,r=3] ~ ~ ~ execute @a[r=4,tag=shooting] ~ ~ ~ playsound mob.evocation_illager.cast_spell @a[r=30]",
+              "/tag @s remove shooting"
+            ],
+            "transitions": [ { "riding": "(1.0)" }]
+          }
+        }
+      },
+
+      "controller.animation.riding": {
+        "initial_state": "init_hydra",
+
+        "states": {
+          "init_hydra":{"transitions": [{"default": "query.variant == 4"}]},
+
+          "default": {
+            "on_entry":["/event entity @s evt:down", "/tag @s remove has_rider"],
+            "transitions": [ { "riding": "query.has_rider && query.variant == 4" }]
+          },
+          "riding": {
+            "on_entry":["/tag @s add has_rider"],
+            "transitions": [ { "default": "!query.has_rider && query.variant == 4" }],
+            "on_exit": ["@s evt:down"]
+          }
+        }
+      },
+
+      "controller.animation.player_fly":{
+        "initial_state": "flying_1",
+        "states": {
+          "flying_1":{
+            "transitions": [
+              {"flying_2": "(1.0)"}
+            ],
+            "on_entry": ["/function fly"]
+          },
+          "flying_2":{
+            "transitions": [
+              {"flying_1": "(1.0)"}
+            ],
+            "on_entry": ["/function fly"]
+          }
+        }
+      }
+    }
+}
+  
+  

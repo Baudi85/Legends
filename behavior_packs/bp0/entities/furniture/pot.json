@@ -1,0 +1,98 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "greek:pot",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations" : {
+        "spawn" : "controller.animation.pot_loot"
+      },
+      "scripts" : {
+        "animate" : ["spawn"]
+      }
+    },
+    "component_groups": {
+      "cg:show":{
+        "minecraft:variant":{"value":0},
+        "minecraft:mark_variant":{"value":0},
+        "minecraft:collision_box":{
+          "height": 0.7,
+          "width": 0.4
+        },
+        "minecraft:health": {
+          "value": 10000,
+          "max": 10000
+        },
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "all",
+            "damage_multiplier": 0.00000000000000000001,
+            "on_damage": { "filters": {"all_of": [ { "test": "has_damage", "subject": "self", "operator": "equals", "value": "attack" }]},
+              "event": "evt:anim"
+            }
+          }
+        }
+      },
+      "cg:anim": {
+        "minecraft:variant":{"value":0},
+        "minecraft:mark_variant":{"value":1},
+        "minecraft:collision_box":{
+          "height": 0,
+          "width": 0
+        },
+        "minecraft:timer": {
+          "looping":false,
+          "time": 9,
+          "time_down_event": {"event":"evt:hide"}
+        },
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "all",
+            "deals_damage": false
+          }
+        }
+      },
+      "cg:hide":{
+        "minecraft:variant":{"value":1},
+        "minecraft:mark_variant":{"value":0},
+        "minecraft:collision_box":{
+          "height": 0,
+          "width": 0
+        },
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "all",
+            "deals_damage": false
+          }
+        },
+        "minecraft:timer": {
+          "looping":false,
+          "time": 600,
+          "time_down_event": {"event": "evt:show"}
+        }
+      }
+    },
+    "components": {
+      "minecraft:health":{"value":1000},
+      "minecraft:knockback_resistance": {"value": 1},
+      "minecraft:physics": {"has_gravity": true},        
+      "minecraft:type_family":{
+        "family": ["greek"]
+      },         
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },  
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": { "component_groups": ["cg:show"]}
+      },
+      "evt:anim": {"sequence": [{"remove": {"component_groups":["cg:show"]}}, {"add":{"component_groups":["cg:anim"]}}]},
+      "evt:hide": {"sequence": [{"remove": {"component_groups":["cg:anim"]}}, {"add":{"component_groups":["cg:hide"]}}]},
+      "evt:show": {"sequence": [{"remove": {"component_groups":["cg:hide"]}}, {"add":{"component_groups":["cg:show"]}}]}
+    }
+  }
+}

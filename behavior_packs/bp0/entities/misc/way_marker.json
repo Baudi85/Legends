@@ -1,0 +1,56 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "misc:way_marker",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "cg:despawn":{
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "height": 0,
+        "width": 0
+      },
+      "minecraft:knockback_resistance": {"value": 1},
+      "minecraft:physics": {"has_gravity": true},
+      "minecraft:type_family":{
+        "family": ["greek", "misc"]
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:entity_sensor": {
+        "sensor_range": 3, 
+        "relative_range": true,
+        "require_all": false,
+        "minimum_count": 1,
+        "event_filters": {
+          "test": "is_family",
+          "subject": "other",
+          "value": "player"
+        },
+        "event": "evt:despawn"
+      },
+      "minecraft:tick_world": {
+        "never_despawn": true,
+        "radius": 2
+      }
+    },
+    "events": {
+      "evt:despawn":{
+        "add": {
+          "component_groups": [
+            "cg:despawn"
+          ]
+        }
+      }
+    }
+  }
+}

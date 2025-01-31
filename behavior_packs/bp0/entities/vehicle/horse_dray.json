@@ -1,0 +1,103 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+        "identifier": "greek:horse_dray",
+        "is_spawnable": false,
+        "is_summonable": true,
+        "is_experimental": false
+    },
+    "component_groups": {
+      "cg:rideable": {
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": ["greek", "player"],
+          "seats": [
+            {
+              "position": [0, 0.5, -0.1]
+            }
+          ]
+        },
+        "minecraft:input_ground_controlled": {},
+        "minecraft:behavior.player_ride_tamed": {},
+        "minecraft:pushable": {
+          "is_pushable": true,
+          "is_pushable_by_piston": true
+        }
+      },
+      "cg:unrideable":{
+        "minecraft:pushable": {
+          "is_pushable": false,
+          "is_pushable_by_piston": false
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "cg:rideable"
+          ]
+        }
+      },
+      "evt:rideable":{
+        "add": {
+          "component_groups": [
+            "cg:rideable"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "cg:unrideable"
+          ]
+        }
+      },
+      "evt:unrideable":{
+        "remove": {
+          "component_groups": [
+            "cg:rideable"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "cg:unrideable"
+          ]
+        }
+      }
+    },
+    
+    "components": {
+      "minecraft:tick_world": {
+        "radius": 2
+      },
+      "minecraft:navigation.walk": {"can_float": true },
+      "minecraft:movement.basic": {},
+      "minecraft:movement": {"value": 0.2},
+      "minecraft:loot": {"table":"loot_tables/horse_dray.loot.json"},
+      "minecraft:knockback_resistance": {
+          "value": 1
+      },
+      "minecraft:type_family": {
+        "family": ["greek", "race"]
+      },
+      "minecraft:behavior.float": {"priority": 0},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:health": {"value": 20, "max": 20},
+      "minecraft:fall_damage": {"value": 0.0},
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
+      },
+      "minecraft:physics": {},
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      }
+    } 
+  }
+}

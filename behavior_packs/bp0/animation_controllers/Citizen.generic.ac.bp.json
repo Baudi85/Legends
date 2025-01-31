@@ -1,0 +1,28 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.citizen.talk": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [ 
+                        "/" 
+                    ],
+                    "transitions": [
+                        {"talking": "query.is_stunned"}
+                    ]
+                },
+
+                "talking": {
+                    "on_entry": [ 
+                        "/function misc/citizen",
+                        "@s evt:start_cooldown" 
+                    ],
+                    "transitions": [
+                        {"default": "!query.is_stunned"}
+                    ]
+                }
+            }
+        }
+    }
+}

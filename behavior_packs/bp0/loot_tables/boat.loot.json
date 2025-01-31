@@ -1,0 +1,14 @@
+{
+    "pools": [
+        {
+            "entries": [
+                {
+                    "name": "greek:spawn_boat",
+                    "type": "item",
+                    "weight": 1
+                }
+            ],
+            "rolls": 1
+        }
+    ]
+}

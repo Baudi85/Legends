@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.greek.hydra": {
+      "arrays": {
+        "textures": {
+          "Array.textures": [
+            "Texture.default",
+            "Texture.saddled"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [
+        "Array.textures[query.variant == 4 ? 1 : 0]" 
+      ]
+    }
+  }
+}

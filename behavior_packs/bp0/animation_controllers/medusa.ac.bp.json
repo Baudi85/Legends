@@ -1,0 +1,39 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.medusa.attack": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {"stun": "query.variant == 1"}
+                    ]
+                },
+                "stun": {
+                    "on_entry": ["/function medusa/stun"],
+                    "transitions" : [
+                        {"stun_reset": "query.variant != 1"}
+                    ]
+                },
+                "stun_reset": {
+                    "transitions": [
+                        {"default": "query.all_animations_finished"}
+                    ]
+                }
+            }
+        },
+        "controller.animation.medusa.death": {
+            "initial_state": "alive",
+            "states": {
+                "alive": {
+                    "transitions": [
+                        {"dead": "!query.is_alive"}
+                    ]
+                },
+                "dead": {
+                    "on_entry": ["/function quests/quest_5/medusa_death"]
+                }
+            }
+        }
+    }
+}

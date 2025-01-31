@@ -1,0 +1,90 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.lure.hydra": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [{"init_hydra":"query.is_baby"}]
+                },
+                "init_hydra": {
+                    "on_entry": [],
+                    "transitions": [
+                        {"var_0":"query.variant == 0"},
+                        {"var_1":"query.variant == 1"},
+                        {"var_2":"query.variant == 2"},
+                        {"var_3":"query.variant == 3"}
+                    ]
+                },
+
+                // lure 0
+                "var_0":{
+                    "on_entry": [],
+                    "transitions": [
+                        {"timer_0": "query.is_sheared"}
+                    ]
+                },
+                "timer_0":{
+                    "on_entry": ["/function lure/reached_lure"], 
+                    "transitions": [
+                        {"trigger_0": "query.is_saddled"}
+                    ]
+                },
+                "trigger_0":{
+                    "on_entry": ["/function lure/trigger_0"]
+                },
+
+                // lure 1
+                "var_1":{
+                    "on_entry": [],
+                    "transitions": [
+                        {"timer_1": "query.is_sheared"}
+                    ]
+                },
+                "timer_1":{
+                    "on_entry": ["/function lure/reached_lure"], 
+                    "transitions": [
+                        {"trigger_1": "query.is_saddled"}
+                    ]
+                },
+                "trigger_1":{
+                    "on_entry": ["/function lure/trigger_1"]
+                },
+
+                // lure 2
+                "var_2":{
+                    "on_entry": [],
+                    "transitions": [
+                        {"timer_2": "query.is_sheared"}
+                    ]
+                },
+                "timer_2":{
+                    "on_entry": ["/function lure/reached_lure"], 
+                    "transitions": [
+                        {"trigger_2": "query.is_saddled"}
+                    ]
+                },
+                "trigger_2":{
+                    "on_entry": ["/function lure/trigger_2"]
+                },
+
+                // lure 3
+                "var_3":{
+                    "on_entry": [],
+                    "transitions": [
+                        {"timer_3": "query.is_sheared"}
+                    ]
+                },
+                "timer_3":{
+                    "on_entry": ["/function lure/reached_lure"], 
+                    "transitions": [
+                        {"trigger_3": "query.is_saddled"}
+                    ]
+                },
+                "trigger_3":{
+                    "on_entry": ["/function lure/trigger_3"]
+                }
+            }
+        }
+    }
+}

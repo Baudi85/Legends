@@ -1,0 +1,148 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.hydra.hostile_attack": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "wither_attack": "query.is_sheared"
+                        },
+                        {
+                            "poison_attack": "query.is_stunned"
+                        }
+                    ]
+                },
+                "poison_attack": {
+                    "on_entry": [
+                        "/function hydra/attack_poison_growl"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_stunned"
+                        }
+                    ]
+                },
+                "wither_attack": {
+                    "on_entry": [
+                        "/function hydra/attack_wither_growl"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_sheared"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.hydra.phase_switch": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "low": "(query.health / query.max_health) < 0.5 && query.variant == 1"
+                        }
+                    ]
+                },
+                "low": {
+                    "on_entry": [
+                        "@s boss:enter_phase_2", "/event entity @e[type=misc:lure] evt:die"
+                    ]
+                }
+            }
+        },
+        "controller.animation.hydra.heal": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "defeated": "query.variant == 3"
+                        }
+                    ]
+                },
+                "defeated": {
+                    "on_entry": [
+                        "/effect @e[type=greek:hydra,r=5] instant_health 1000"
+                    ]
+                }
+            }
+        },
+        "controller.animation.hydra.riding_arena": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "notification": "query.is_illager_captain"
+                        }
+                    ]
+                },
+                "notification": {
+                    "on_entry": [
+                        "/tellraw @p { \"rawtext\": [{ \"text\": \"§l§c<!> §rYou can't ride your Hydra during the arena battle.\" }]}",
+                        "/playsound random.anvil_land @a ~ ~ ~ 1.01 1.01",
+                        "@s notification:rideable_remove"
+                    ],
+                    "transitions": [
+                        {"default": "!query.is_illager_captain"}
+                    ]
+                }
+            }
+        },
+
+        "controller.animation.hydra.sitting": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "sitting": "query.is_sitting"
+                        }
+                    ]
+                },
+                "sitting": {
+                    "on_entry": [
+                        "/tellraw @p { \"rawtext\": [{ \"text\": \"§l§3<!> §rYour Hydra is now waiting for you. Sneak and interact to make it follow you again.\" }]}",
+                        "/playsound note.bell @p ~ ~ ~ 2 0.8"
+                    ],
+                    "on_exit": [
+                        "/tellraw @p { \"rawtext\": [{ \"text\": \"§l§3<!> §rYour Hydra is now following you. Sneak and interact to make it wait again.\" }]}",
+                        "/playsound note.bell @p ~ ~ ~ 2 1.0"
+                    ],
+                    "transitions": [
+                        {"default": "!query.is_sitting"}
+                    ]
+                }
+            }
+        },
+        "controller.animation.hydra.tame": {
+            "initial_state": "init",
+            "states": {
+                "init": {
+                    "transitions": [
+                        {"defeated": "query.variant == 3"}
+                    ]
+                },
+                "defeated": {
+                    "on_entry": [
+                        "/give @a minecraft:nether_star",
+                        "/tellraw @a { \"rawtext\": [{ \"text\": \"§3§l<!>§r§oTame the Hydra using its §r§3Soul Shard§r§o.\" }] }",
+                        "/playsound random.levelup @a ~ ~ ~ 1.00"
+
+                    ],
+                    "transitions": [
+                        {"tamed": "query.variant == 4"}
+                    ]
+                },
+                "tamed": {
+                    "on_entry": [
+                        "/clear @a minecraft:nether_star"
+                    ]
+                }
+            }
+        }
+    }
+}

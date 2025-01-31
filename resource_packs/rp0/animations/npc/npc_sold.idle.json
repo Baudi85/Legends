@@ -1,0 +1,29 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.npc_sold.idle": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": ["-Math.sin((query.anim_time+2.3) *290)*2", "-Math.sin((query.anim_time+2.3) *290)*0.1", "-1-Math.sin((query.anim_time+2.3) *290)*0.1"]
+				},
+				"left_arm": {
+					"rotation": [-22.01759, "56.8662-Math.sin((query.anim_time+2.2) *290)*1", "-25.9527-Math.sin((query.anim_time+2.2) *290)*0.5"],
+					"position": [0, "Math.sin((query.anim_time+1.2) *290)*0.2", 0]
+				},
+				"right_arm": {
+					"rotation": [14.50774, "20.5669+Math.sin((query.anim_time+2) *290)*2", "17.0242+Math.sin((query.anim_time+2) *290)*1"],
+					"position": [0, "Math.sin((query.anim_time+1) *290)*0.2", 0]
+				},
+				"left_leg": {
+					"rotation": [0.44067, -9.99038, -2.53852],
+					"position": [0, 0, -1.5]
+				},
+				"right_leg": {
+					"rotation": [0, 12.5, 0],
+					"position": [0, 0, 0]
+				}
+			}
+		}
+	}
+}

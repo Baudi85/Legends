@@ -1,0 +1,61 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "medusa:rock",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "cg:despawn":{
+        "minecraft:instant_despawn": {}
+      },
+      "cg:active": {
+        "minecraft:is_sheared": {},
+        "minecraft:timer":{
+          "looping": false,
+          "time": 8.5,
+          "time_down_event": {"event": "evt:deactivate"}
+        }
+      },
+      "cg:inactive": {
+        "minecraft:timer":{
+          "looping": false,
+          "time": 10,
+          "time_down_event": {"event": "evt:despawn"}
+        }
+      }
+    },
+    "components": {
+      "minecraft:scale": {
+        "value": 1
+      },
+      "minecraft:knockback_resistance": {"value": 1000.0},
+      "minecraft:physics": {"has_gravity": true},        
+      "minecraft:type_family":{
+        "family": ["greek", "misc", "boss"]
+      },         
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:collision_box": {
+        "height": 0,
+        "width": 0
+      }
+    },
+    "events":{
+      "minecraft:entity_spawned": {
+        "add": {"component_groups": ["cg:active"]}
+      },
+      "evt:despawn":{
+        "add": {"component_groups":["cg:despawn"]}
+      },
+      "evt:deactivate": {
+        "add":{"component_groups": ["cg:inactive"]},
+        "remove": {"component_groups": ["cg:active"]}
+      }
+    }
+  }
+}

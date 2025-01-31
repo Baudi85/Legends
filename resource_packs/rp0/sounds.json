@@ -1,0 +1,201 @@
+{
+    "entity_sounds": {
+        "entities": {
+            "greek:hydra": {
+                "volume": 1.0,
+                "pitch": [
+                    1.0
+                ],
+                "events": {
+                    "ambient": {
+                        "sound": "hydra.ambient",
+                        "volume": 1.5,
+                        "pitch": [
+                            0.5,
+                            1.0
+                        ]
+                    },
+                    "attack": {
+                        "sound": "hydra.attack",
+                        "volume": 3.0,
+                        "pitch": [
+                            0.7,
+                            0.9
+                        ]
+                    },
+                    "hurt": {
+                        "sound": "hydra.hurt",
+                        "volume": 1.5,
+                        "pitch": [
+                            0.7,
+                            1.0
+                        ]
+                    },
+                    "death": {
+                        "sound": "hydra.defeated",
+                        "volume": 1.5,
+                        "pitch": [
+                            1
+                        ]
+                    },
+                    "shoot":{
+                        "sound": "hydra.shoot",
+                        "volume": 1.5
+                    },
+                    "flap": {
+                        "sound": "mob.enderdragon.flap",
+                        "volume": 0.1
+                    }
+                }
+            },
+            "greek:medusa": {
+                "volume": 1.0,
+                "pitch": [
+                    1.0
+                ],
+                "events": {
+                    "ambient": {
+                        "sound": "medusa.ambient",
+                        "volume": 1.5,
+                        "pitch": [
+                            1.0,
+                            1.2
+                        ]
+                    },
+                    "attack": {
+                        "sound": "medusa.attack",
+                        "volume": 3.0,
+                        "pitch": [
+                            1.0,
+                            1.1
+                        ]
+                    },
+                    "hurt": {
+                        "sound": "medusa.hurt",
+                        "volume": 1.5,
+                        "pitch": [
+                            1.1,
+                            1.3
+                        ]
+                    },
+                    "death": {
+                        "sound": "medusa.hurt",
+                        "volume": 1.5,
+                        "pitch": [
+                            1
+                        ]
+                    }
+                }
+            },
+            "greek:soldier": {
+                "volume": 1.0,
+                "pitch": [
+                    1.0
+                ],
+                "events": {
+                    "attack": {
+                        "sound": "mob.evocation_fangs.attack",
+                        "volume": 1.1,
+                        "pitch": [
+                            1.0,
+                            1.2
+                        ]
+                    },
+                    "ambient": {
+                        "sound": "mob.evocation_illager.ambient",
+                        "volume": 1.0,
+                        "pitch": [
+                            1.0,
+                            1.2
+                        ]
+                    },
+                    "hurt": {
+                        "sound": "mob.evocation_illager.hurt",
+                        "volume": 1.0,
+                        "pitch": [
+                            1.0,
+                            1.2
+                        ]
+                    },
+                    "death": {
+                        "sound": "mob.evocation_illager.death",
+                        "volume": 1.0,
+                        "pitch": [
+                            0.9,
+                            1.1
+                        ]
+                    }
+                }
+            },
+            "greek:bowl_fire": {
+                "volume": 1.0,
+                "pitch": [
+                    1.0
+                ],
+                "events": {
+                    "ambient": {
+                        "sound": "misc.fire",
+                        "volume": 1.0,
+                        "pitch": [
+                            0.8,
+                            1.2
+                        ]
+                    }
+                }
+            },
+            "greek:pot": {
+                "volume": 1.0,
+                "pitch": [
+                    1.0
+                ],
+                "events": {
+                    "hurt": {
+                        "sound": "misc.vase_break",
+                        "volume": 1.0,
+                        "pitch": [
+                            0.95,
+                            1.05
+                        ]
+                    }
+                }
+            },
+            "greek:horse_dray" : {
+                "events" : {
+                   "ambient" : "mob.horse.idle",
+                   "armor" : {
+                      "pitch" : 1.0,
+                      "sound" : "mob.horse.armor",
+                      "volume" : 0.60
+                   },
+                   "breathe" : {
+                      "pitch" : 1.0,
+                      "sound" : "mob.horse.breathe",
+                      "volume" : 0.70
+                   },
+                   "death" : "mob.horse.death",
+                   "hurt" : "mob.horse.hit",
+                   "jump" : {
+                      "pitch" : 1.0,
+                      "sound" : "mob.horse.jump",
+                      "volume" : 0.40
+                   },
+                   "land" : {
+                      "pitch" : 1.0,
+                      "sound" : "mob.horse.land",
+                      "volume" : 0.40
+                   },
+                   "step":{
+                        "sound": "greek.carriage.walk",
+                        "volume": 1.0,
+                        "pitch": [
+                            0.95,
+                            1.05                        
+                       ]
+                   }
+                },
+                "pitch" : [ 0.80, 1.20 ],
+                "volume" : 0.80
+            }
+        }
+    }
+}

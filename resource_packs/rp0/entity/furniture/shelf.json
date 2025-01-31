@@ -1,0 +1,22 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "greek:shelf",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entities/shelf"
+      },
+      "geometry": {
+        "default": "geometry.shelf"
+      },
+      "render_controllers": [ "controller.render.onetexture" ],
+      "spawn_egg": {
+        "base_color": "#e3feff",
+        "overlay_color": "#faffff"
+      }
+    }
+  }
+} 

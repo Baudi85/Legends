@@ -1,0 +1,47 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.Citizen_f": {
+            "arrays": {
+                "textures": {
+                    "Array.skins": [
+						"Texture.v0f",
+						"Texture.v1f",
+						"Texture.v2f",
+						"Texture.v3f"
+                    ]
+                }
+            },
+            "textures": [
+                "Array.skins[query.variant]"
+            ],
+            "geometry": "Geometry.female",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ]
+        },
+        "controller.render.Citizen_m": {
+            "arrays": {
+                "textures": {
+                    "Array.skins": [
+						"Texture.v0m",
+						"Texture.v1m",
+						"Texture.v2m",
+						"Texture.v3m"
+                    ]
+                }
+            },
+            "textures": [
+                "Array.skins[query.variant]"
+            ],
+            "geometry": "Geometry.male",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ]
+        }
+    }
+}

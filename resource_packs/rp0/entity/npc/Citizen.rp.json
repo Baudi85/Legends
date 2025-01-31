@@ -1,0 +1,47 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "greek:citizen",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"v0f": "textures/entities/cit/Citizen_0f",
+				"v1f": "textures/entities/cit/Citizen_1f",
+				"v2f": "textures/entities/cit/Citizen_2f",
+				"v3f": "textures/entities/cit/Citizen_3f",
+				"v0m": "textures/entities/cit/Citizen_0",
+				"v1m": "textures/entities/cit/Citizen_1",
+				"v2m": "textures/entities/cit/Citizen_2",
+				"v3m": "textures/entities/cit/Citizen_3"
+			},
+			"geometry": {
+				"female": "geometry.npc_cit_f",
+				"male": "geometry.npc_cit"
+			},
+			"render_controllers": [
+				{"controller.render.Citizen_f": "query.is_sheared == 1"},
+				{"controller.render.Citizen_m": "query.is_sheared == 0"}
+			],
+
+			"animations": {
+				"anim_f_idle": "animation.citizen_f.idle",
+				"anim_m_idle": "animation.citizen_m.idle",
+				"anim_f_move": "animation.cit_f.walk",
+				"anim_m_move": "animation.cit_m.walk",
+
+				"controller.animation" : "controller.animation.citizen"
+			},
+			"scripts" :{
+				"animate": [
+					"controller.animation"
+				]
+			},
+			"spawn_egg": {
+				"base_color": "#08d9c4",
+				"overlay_color": "#8765bc"
+			}
+		}
+	}
+}

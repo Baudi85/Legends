@@ -1,0 +1,28 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.particle.loop": {
+            "loop": true,
+            "animation_length": 1,
+            "particle_effects": {
+                "0.0": [
+                    {
+                        "effect": "particle_loop",
+                        "locator": "smallexhaust"
+                    }
+                ]
+            }
+        },
+        "animation.particle.loop_inf": {
+            "loop": true,
+            "particle_effects": {
+                "0.0": [
+                    {
+                        "effect": "particle_loop",
+                        "locator": "smallexhaust"
+                    }
+                ]
+            }
+        }
+    }
+}

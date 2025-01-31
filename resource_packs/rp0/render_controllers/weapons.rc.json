@@ -1,0 +1,29 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+
+
+        "controller.render.player.greek_sword": {
+            "textures": [
+                "Texture.greek_sword"
+            ],
+            "geometry": "Geometry.greek_sword",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ]
+        },
+        "controller.render.player.greek_medusa_spear": {
+            "textures": [
+                "Texture.greek_medusa_spear"
+            ],
+            "geometry": "Geometry.greek_medusa_spear",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }   
+            ]
+        }
+    }
+}

@@ -1,0 +1,124 @@
+{
+	"format_version": "1.18.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "greek:camp",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"generic": "controller.animation.generic.soldier_camp"
+			},
+			"scripts": {
+				"animate": [
+					"generic"
+				]
+			}
+		},
+		"component_groups": {
+		    "cg:die": {"minecraft:instant_despawn": {}},
+			"camp:idle": {
+				"minecraft:variant": {"value": 0},
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:entity_sensor": {
+					"maximum_count": 16,
+					"minimum_count": 1,
+					"relative_range": true,
+					"require_all": false,
+					"sensor_range": 5,
+					"event": "camp:activate",
+					"event_filters":{"test": "is_family", "operator": "==", "value": "player", "subject": "other"}
+				}
+			},
+			"camp:active": {
+				"minecraft:variant": {"value": 1},
+				"minecraft:mark_variant":{
+					"value": 0
+				},
+				"minecraft:timer": {
+					"time": 180,
+ 					"looping": false,
+					"time_down_event": {
+						"event": "camp:time_out",
+						"target": "self"
+					}
+				}
+			},
+			"camp:cooldown": {
+				"minecraft:variant": {"value": 2},
+				"minecraft:mark_variant": {
+					"value": 1
+				},
+				"minecraft:timer": {
+					"time": 1200,
+					"looping": false,
+					"time_down_event": {
+						"event": "camp:finish_cooldown",
+						"target": "self"
+					}
+				},
+				"minecraft:spawn_entity": {
+					"entities":[
+						{	"min_wait_time": 0,
+							"max_wait_time": 0,
+							"spawn_item": "emerald",
+							"num_to_spawn": 2,
+							"single_use": true
+						}
+					]
+				}
+			},
+			"camp:time_out":{
+				"minecraft:variant": {"value": 3},
+				"minecraft:mark_variant": {
+					"value": 0
+				},
+				"minecraft:timer": {
+					"time": 1,
+					"looping": false,
+					"time_down_event": {
+						"event": "camp:finish_cooldown",
+						"target": "self"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:tick_world": {
+				"never_despawn": true,
+				"radius": 2
+			},
+		    "minecraft:collision_box":{"height": 0, "width": 0},
+		    "minecraft:physics": {"has_gravity": true},
+		    "minecraft:type_family": {"family": ["new"]},
+		    "minecraft:damage_sensor": {
+		        "triggers": {
+		            "cause": "all", "deals_damage": false
+		        }
+		    },
+		    "minecraft:knockback_resistance": {"value": 1}
+		},
+		"events": {
+			"minecraft:entity_spawned": {"add": {"component_groups": ["camp:idle"]}},
+		    "evt:die": {"add": {"component_groups": ["cg:die"]}},
+			"camp:activate":{
+				"add": {"component_groups": ["camp:active"]},
+				"remove": {"component_groups": ["camp:idle"]}
+			},
+			"camp:enter_cooldown":{
+				"add": {"component_groups": ["camp:cooldown"]},
+				"remove": {"component_groups": ["camp:active"]}
+			},
+			"camp:finish_cooldown":{
+				"add": {"component_groups": ["camp:idle"]},
+				"remove": {"component_groups": ["camp:cooldown", "camp:time_out"]}
+			},
+			"camp:time_out": {
+				"add": {"component_groups": ["camp:time_out"]},
+				"remove": {"component_groups": ["camp:active"]}
+			}
+		}
+	}
+}

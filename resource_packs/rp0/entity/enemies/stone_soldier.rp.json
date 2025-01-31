@@ -1,0 +1,32 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "greek:stone_soldier",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/enemies/stone_soldier_default"
+			},
+			"geometry": {
+				"default": "geometry.npc_sold"
+			},
+			"render_controllers": ["controller.render.enemies.stone_soldier"],
+
+			"animations": {
+				"move": "animation.npc_sold.walk",
+				"hit": "animation.npc_sold.hit",
+				"idle": "animation.npc_sold.idle"
+			},
+			"animation_controllers" :[
+				{"attack": "controller.animation.npc.Soldier.attack"},
+				{"moving": "controller.animation.move"}
+			],
+			"spawn_egg": {
+				"base_color": "#8765bc",
+				"overlay_color": "#08d9c4"
+			}
+		}
+	}
+}

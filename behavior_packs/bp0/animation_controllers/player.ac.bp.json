@@ -1,0 +1,45 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.player.death": {
+            "initial_state": "alive",
+            "states": {
+                "alive": {
+                    "transitions": [
+                        {"dead": "!query.is_alive"}
+                    ]
+                },
+                "dead":{
+                    "on_entry": [
+                        "/function quests/player_death"
+                    ],
+                    "transitions": [
+                        {
+                            "alive": "query.is_alive"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.player.intro_damage": {
+            "initial_state": "outside_intro",
+            "states": {
+                "outside_intro": {
+                    "transitions": [
+                        {"intro": "query.is_ignited"}
+                    ]
+                },
+                "intro":{
+                    "animations": [
+                        "intro_damage_animation"
+                    ],
+                    "transitions": [
+                        {
+                            "outside_intro": "!query.is_ignited"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "greek:boat",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "One": "textures/entities/boat0",
+        "Two":"textures/entities/boat1"
+      },
+      "geometry": {
+        "default": "geometry.boat"
+      },
+      "render_controllers": [ "controller.render.twotextures" ],
+      "animation_controllers": [{"general":"controller.animation.move"}],
+      "animations": {
+        "idle": "animation.boat.idle",
+        "move": "animation.boat.move"
+      },
+      "spawn_egg": {
+        "texture": "spawn_egg_boat"
+      }
+    }
+  }
+} 

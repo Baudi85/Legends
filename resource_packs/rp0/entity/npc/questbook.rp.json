@@ -1,0 +1,26 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "npc:questbook",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entities/seher_book.png"
+      },
+      "geometry": {
+        "default": "geometry.seher"
+      },
+      "render_controllers": [ "controller.render.onetexture" ],
+      "animation_controllers": [{"idle":"controller.animation.idle"}],
+      "animations": {
+        "idle": "animation.arena.idle"
+      },
+      "spawn_egg": {
+        "base_color": "#31aeb3",
+        "overlay_color": "#ee427b"
+      }
+    }
+  }
+} 

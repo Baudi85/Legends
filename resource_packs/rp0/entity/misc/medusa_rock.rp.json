@@ -1,0 +1,25 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "medusa:rock",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entities/enemies/medusa_rock.png"
+      },
+      "geometry": {
+        "default": "geometry.medusa_rock"
+      },
+      "animations":{
+        "spawn": "animation.medusa_rock.spawn",
+        "despawn": "animation.medusa_rock.despawn"
+      },
+      "animation_controllers": [
+        {"controller": "controller.animation.medusa_rock"}
+      ],
+      "render_controllers": [ "controller.render.onetexture" ]
+    }
+  }
+} 

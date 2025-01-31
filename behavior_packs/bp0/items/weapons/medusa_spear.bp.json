@@ -1,0 +1,13 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:item": {
+		"description": {
+			"identifier": "greek:medusa_spear",
+			"register_to_creative_menu": true
+		},
+		"components": {
+			"minecraft:hand_equipped": false,
+			"minecraft:max_stack_size": 1
+		}
+	}
+}

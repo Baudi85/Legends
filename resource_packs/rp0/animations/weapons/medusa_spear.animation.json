@@ -1,0 +1,15 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.weapons.greek_medusa_spear.first_person_hold": {
+			"loop": true,
+			"bones": {
+				"rightItem": {
+					"rotation": [0, 40, -40],
+					"position": [6, -5, 20],
+					"scale":[1.3, 1.3, 1.3]
+				}
+			}
+		}
+	}
+}
